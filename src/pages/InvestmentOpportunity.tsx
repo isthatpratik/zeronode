@@ -461,12 +461,12 @@ const InvestmentOpportunity = () => {
               
               <ul className="space-y-2 mb-4 pl-4">
                 <li>• Triple client count annually through 2027</li>
-                <li>• Expand ARR to <strong>US $ 8 m</strong> by 2029 with > 85 % gross margin</li>
-                <li>• Show <strong>9× LTV/CAC</strong> and > 140 % net retention in steady-state cohorts</li>
+                <li>• Expand ARR to <strong>US $ 8 m</strong> by 2029 with &gt; 85 % gross margin</li>
+                <li>• Show <strong>9× LTV/CAC</strong> and &gt; 140 % net retention in steady-state cohorts</li>
               </ul>
               
               <p className="mb-4">
-                Neural Arc is engineered for <strong>capital-efficient compounding</strong>, giving seed investors a clear path from today's <strong>$12 m</strong> valuation toward the 9-figure territory established by <strong>Sisu Data</strong> and the multi-billion track record of <strong>Quantexa</strong>.
+                Neural Arc is engineered for <strong>capital-efficient compounding</strong>, giving seed investors a clear path from today&apos;s <strong>$12 m</strong> valuation toward the 9-figure territory established by <strong>Sisu Data</strong> and the multi-billion track record of <strong>Quantexa</strong>.
               </p>
               
               <p className="text-xl font-bold text-teal text-center mt-6">
