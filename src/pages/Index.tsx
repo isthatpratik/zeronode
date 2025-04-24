@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <main className="pt-24 pb-16">
       {/* Hero Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-8 md:py-12">
         <div className="grid-container">
           <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 text-center mb-12">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
@@ -39,7 +39,7 @@ const Index = () => {
       </section>
 
       {/* Chat Section */}
-      <section className="py-8 bg-gradient-to-b from-charcoal/0 to-charcoal/30">
+      <section className="py-4 bg-gradient-to-b from-charcoal/0 to-charcoal/30">
         <div className="grid-container">
           <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12">
             <HomeChat />
@@ -48,7 +48,7 @@ const Index = () => {
       </section>
 
       {/* Market Stats Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-8 md:py-12">
         <div className="grid-container">
           {/* Market Stats - Converted from table to cards */}
           <div className="col-span-4 md:col-span-8 lg:col-span-12 mt-16">

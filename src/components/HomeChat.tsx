@@ -66,7 +66,7 @@ const HomeChat = () => {
   };
 
   return (
-    <Card className="w-full max-w-3xl mx-auto bg-charcoal/30 border-white/10">
+    <Card className="w-full max-w-3xl mx-auto bg-charcoal/30 border-white/10 relative animate-pulse-subtle before:absolute before:inset-0 before:-z-10 before:rounded-lg before:bg-gradient-to-r before:from-teal/10 before:via-blue-500/10 before:to-teal/10 before:animate-glow">
       <div className="h-[400px] overflow-y-auto p-6 space-y-4">
         {messages.map((message, index) => (
           <div 
