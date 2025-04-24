@@ -1,6 +1,5 @@
 
 import { useEffect, useRef } from "react";
-import { Chart, ChartConfiguration, ChartTypeRegistry } from 'chart.js';
 import { 
   Chart as ChartJS,
   CategoryScale,
@@ -12,7 +11,10 @@ import {
   RadialLinearScale,
   Title,
   Tooltip,
-  Legend 
+  Legend,
+  ChartType,
+  ChartData,
+  ChartOptions
 } from 'chart.js';
 
 // Register all necessary chart elements
@@ -30,9 +32,9 @@ ChartJS.register(
 );
 
 interface ChartComponentProps {
-  type: keyof ChartTypeRegistry;
-  data: any;
-  options?: any;
+  type: ChartType;
+  data: ChartData;
+  options?: ChartOptions;
   className?: string;
   title?: string;
   caption?: string;
@@ -47,7 +49,7 @@ const ChartComponent = ({
   caption 
 }: ChartComponentProps) => {
   const chartRef = useRef<HTMLCanvasElement>(null);
-  const chartInstance = useRef<Chart | null>(null);
+  const chartInstance = useRef<ChartJS | null>(null);
 
   useEffect(() => {
     if (!chartRef.current) return;
@@ -126,7 +128,7 @@ const ChartComponent = ({
         type,
         data,
         options: mergedOptions
-      } as ChartConfiguration);
+      });
     }
 
     // Cleanup on unmount
