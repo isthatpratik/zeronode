@@ -5,22 +5,33 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import AIChatWidget from './AIChatWidget';
 import APIKeyManager from './APIKeyManager';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  const routes = [
+  const mainRoutes = [
     { path: '/', label: 'Home' },
     { path: '/executive-summary', label: 'Executive Summary' },
-    { path: '/market-overview', label: 'Market Overview' },
     { path: '/orb-platform', label: 'ORB Platform' },
     { path: '/nod-platform', label: 'NOD Platform' },
-    { path: '/investment-opportunity', label: 'Investment Opportunity' },
-    { path: '/future-outlook', label: 'Future Outlook' },
+    { path: '/platforms/micro-saas', label: 'Micro SaaS Suite' },
+  ];
+
+  const investmentRoutes = [
+    { path: '/investment-opportunity', label: 'Overview' },
+    { path: '/market-overview', label: 'Market Overview' },
     { path: '/visualizations', label: 'Interactive Visuals' },
-    { path: '/contact', label: 'Contact' },
+    { path: '/future-outlook', label: 'Future Outlook' },
   ];
 
   return (
@@ -34,7 +45,7 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             <div className="flex items-center gap-6">
-              {routes.map((route) => (
+              {mainRoutes.map((route) => (
                 <Link
                   key={route.path}
                   to={route.path}
@@ -43,6 +54,28 @@ const Header = () => {
                   {route.label}
                 </Link>
               ))}
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="text-offwhite hover:text-teal transition duration-200 text-sm">
+                      Investment Opportunity
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="grid gap-3 p-4 w-[400px]">
+                        {investmentRoutes.map((route) => (
+                          <Link
+                            key={route.path}
+                            to={route.path}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{route.label}</div>
+                          </Link>
+                        ))}
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
             </div>
             <div className="flex items-center">
               <Button asChild className="bg-teal text-charcoal hover:bg-teal/90">
@@ -68,7 +101,7 @@ const Header = () => {
           <div className="lg:hidden absolute left-0 right-0 top-[72px] bg-charcoal border-t border-white/10">
             <nav className="container mx-auto px-4 py-4">
               <div className="flex flex-col space-y-3">
-                {routes.map((route) => (
+                {mainRoutes.map((route) => (
                   <Link
                     key={route.path}
                     to={route.path}
@@ -78,6 +111,19 @@ const Header = () => {
                     {route.label}
                   </Link>
                 ))}
+                <div className="py-2 border-t border-white/10">
+                  <p className="text-sm font-medium text-white/60 mb-2">Investment Opportunity</p>
+                  {investmentRoutes.map((route) => (
+                    <Link
+                      key={route.path}
+                      to={route.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-offwhite hover:text-teal py-2 block transition duration-200 pl-4"
+                    >
+                      {route.label}
+                    </Link>
+                  ))}
+                </div>
                 <Button asChild className="bg-teal text-charcoal hover:bg-teal/90 w-full mt-4">
                   <Link to="/contact">Get Demo</Link>
                 </Button>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Index from '@/pages/Index';
@@ -9,7 +10,9 @@ import InvestmentOpportunity from '@/pages/InvestmentOpportunity';
 import Contact from '@/pages/Contact';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import MicroSuite from '@/pages/MicroSuite';
+import MicroSaas from '@/pages/platforms/MicroSaas';
+import MarketOverview from '@/pages/MarketOverview';
+import FutureOutlook from '@/pages/FutureOutlook';
 
 const App = () => {
   return (
@@ -23,8 +26,10 @@ const App = () => {
           <Route path="/orb-platform" element={<OrbPlatform />} />
           <Route path="/nod-platform" element={<NodPlatform />} />
           <Route path="/investment-opportunity" element={<InvestmentOpportunity />} />
+          <Route path="/market-overview" element={<MarketOverview />} />
+          <Route path="/future-outlook" element={<FutureOutlook />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/micro-suite" element={<MicroSuite />} />
+          <Route path="/platforms/micro-saas" element={<MicroSaas />} />
         </Routes>
         <Footer />
       </div>
