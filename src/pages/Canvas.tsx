@@ -11,16 +11,20 @@ import SummarySection from '@/components/canvas/SummarySection';
 
 const Canvas = () => {
   return (
-    <main className="pt-24 pb-16 min-h-screen bg-gradient-to-b from-charcoal to-charcoal/90">
-      <div className="grid-container">
-        <IntroSection />
-        <VisualizationSection />
-        <MarketSection />
-        <DecisionIntelSection />
-        <MicroSaasSection />
-        <WhitespaceSection />
-        <StrategicAdvantageSection />
-        <SummarySection />
+    <main className="min-h-screen bg-gradient-to-b from-charcoal to-charcoal/90">
+      <div className="pt-24 pb-16">
+        <div className="grid-container">
+          <div className="col-span-4 md:col-span-8 lg:col-span-12 space-y-12">
+            <IntroSection />
+            <VisualizationSection />
+            <MarketSection />
+            <DecisionIntelSection />
+            <MicroSaasSection />
+            <WhitespaceSection />
+            <StrategicAdvantageSection />
+            <SummarySection />
+          </div>
+        </div>
       </div>
     </main>
   );
