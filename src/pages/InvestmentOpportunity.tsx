@@ -8,22 +8,50 @@ import Benchmarks from "@/components/investment/Benchmarks";
 import Forecast from "@/components/investment/Forecast";
 import Valuation from "@/components/investment/Valuation";
 import MicroSuite from "@/components/investment/MicroSuite";
+import { Card } from "@/components/ui/card";
+import { ChartLine, TrendingUp, LineChart } from "lucide-react";
 
 const InvestmentOpportunity = () => {
   return (
     <main className="pt-24 pb-16">
       <div className="grid-container">
         <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-12">
-          <StyledCard highlight className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Investment Opportunity</h1>
-            <p className="text-xl text-muted-foreground">
-              Neural Arc offers a unique investment opportunity in the rapidly growing AI sector,
-              combining enterprise platform stability with viral micro-app scalability.
-            </p>
+          <StyledCard highlight className="text-center p-12">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+              Neural Arc Investment Overview
+            </h1>
+            <div className="max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground">
+                A unique opportunity in AI enterprise solutions, combining stable platform revenue with 
+                high-growth micro-app potential.
+              </p>
+            </div>
           </StyledCard>
         </FadeInSection>
 
-        <div className="col-span-4 md:col-span-8 lg:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <StyledCard className="text-center p-6">
+              <ChartLine className="w-12 h-12 text-teal mb-4 mx-auto" />
+              <h3 className="text-xl font-bold mb-2">84% Gross Margin</h3>
+              <p className="text-muted-foreground">High-efficiency operations with strong unit economics</p>
+            </StyledCard>
+            
+            <StyledCard className="text-center p-6">
+              <TrendingUp className="w-12 h-12 text-teal mb-4 mx-auto" />
+              <h3 className="text-xl font-bold mb-2">140% NDR</h3>
+              <p className="text-muted-foreground">Projected net dollar retention by 2027</p>
+            </StyledCard>
+            
+            <StyledCard className="text-center p-6">
+              <LineChart className="w-12 h-12 text-teal mb-4 mx-auto" />
+              <h3 className="text-xl font-bold mb-2">18-Month Runway</h3>
+              <p className="text-muted-foreground">Extended operating timeline with current raise</p>
+            </StyledCard>
+          </div>
+        </FadeInSection>
+
+        <div className="col-span-4 md:col-span-8 lg:col-span-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
           <FadeInSection className="space-y-8">
             <section>
               <SeedRound />
@@ -52,44 +80,10 @@ const InvestmentOpportunity = () => {
         </FadeInSection>
 
         <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mt-8">
-          <section>
-            <SectionHeader number="5" title="Why Invest Now" />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <StyledCard>
-                <h3 className="text-lg font-bold mb-3 text-teal">Market Position</h3>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>Market-anchored cap</li>
-                  <li>Dual revenue engines</li>
-                  <li>Strategic positioning</li>
-                </ul>
-              </StyledCard>
-
-              <StyledCard>
-                <h3 className="text-lg font-bold mb-3 text-teal">Financial Metrics</h3>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>84% gross margin</li>
-                  <li>&lt;6-month CAC payback</li>
-                  <li>&gt;140% NDR by 2027</li>
-                </ul>
-              </StyledCard>
-
-              <StyledCard>
-                <h3 className="text-lg font-bold mb-3 text-teal">Growth Potential</h3>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>18-month runway</li>
-                  <li>≥30 enterprise clients</li>
-                  <li>3 new app launches</li>
-                </ul>
-              </StyledCard>
-            </div>
-          </section>
-        </FadeInSection>
-
-        <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mt-8">
-          <StyledCard className="text-center">
-            <p className="text-xl font-medium">
-              Neural Arc offers investors immediate fair-value entry with asymmetric upside—powered by a dual flywheel of 
-              high-ACV neural-intelligence platforms and rapidly deployable micro-AI tools.
+          <StyledCard className="text-center p-8">
+            <p className="text-xl font-medium max-w-3xl mx-auto">
+              Neural Arc offers investors a balanced opportunity: immediate fair-value entry with significant 
+              upside potential, driven by our dual enterprise platform and micro-AI tools strategy.
             </p>
           </StyledCard>
         </FadeInSection>
