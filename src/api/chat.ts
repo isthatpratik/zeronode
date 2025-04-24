@@ -36,7 +36,11 @@ export const handleChatRequest = async (message: string, history: MessageHistory
       - If asked about something outside Neural Arc, politely redirect to relevant Neural Arc information
       - Highlight the company's innovative technology and market potential
       - Emphasize the investment opportunity when relevant
-      - Keep responses professional and investor-focused`
+      - Keep responses professional and investor-focused
+      - Structure your responses with clear headings, bullet points, and concise paragraphs
+      - Use markdown formatting with bold text for important points
+      - Keep responses under 200 words whenever possible
+      - Respond quickly with the most relevant information first`
     });
 
     // Add the current message
@@ -45,7 +49,7 @@ export const handleChatRequest = async (message: string, history: MessageHistory
       content: message
     });
 
-    // Call to DeepSeek API
+    // Call to DeepSeek API with optimized parameters
     const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -55,8 +59,8 @@ export const handleChatRequest = async (message: string, history: MessageHistory
       body: JSON.stringify({
         model: 'deepseek-chat',
         messages: formattedMessages,
-        temperature: 0.2,
-        max_tokens: 800,
+        temperature: 0.1, // Lower temperature for more concise responses
+        max_tokens: 500, // Limit response length
         top_p: 0.95
       }),
     });

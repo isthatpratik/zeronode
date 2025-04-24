@@ -1,9 +1,11 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { useToast } from '@/hooks/use-toast';
 import { chatWithGemini } from '@/services/apiService';
+import ReactMarkdown from 'react-markdown';
 
 type Message = {
   role: 'user' | 'assistant';
@@ -15,7 +17,7 @@ const AIChatWidget = () => {
   const [messages, setMessages] = useState<Message[]>([
     { 
       role: 'assistant', 
-      content: 'Hello! I\'m your Neural Arc assistant. How can I help you learn more about our AI solutions and investment opportunity?' 
+      content: '### Welcome to Neural Arc! 👋\n\nI can help you with information about:\n\n- Our innovative AI products\n- Our investment opportunity\n- Market statistics\n\nHow can I assist you today?' 
     }
   ]);
   const [input, setInput] = useState('');
@@ -44,12 +46,12 @@ const AIChatWidget = () => {
 
     try {
       // Check if API key exists
-      const apiKey = localStorage.getItem('gemini_api_key');
+      const apiKey = localStorage.getItem('deepseek_api_key');
       if (!apiKey) {
-        throw new Error('Please set your Gemini API key in settings first');
+        throw new Error('Please set your DeepSeek API key in settings first');
       }
 
-      // Get response from Gemini
+      // Get response from DeepSeek
       const response = await chatWithGemini(input, messages);
       
       // Add assistant response to chat
@@ -68,7 +70,7 @@ const AIChatWidget = () => {
       // Add fallback message
       setMessages(prev => [...prev, { 
         role: 'assistant', 
-        content: error.message || "I'm sorry, I couldn't process your request. Please try again later." 
+        content: "I'm sorry, I couldn't process your request. Please try again later." 
       }]);
     } finally {
       setIsLoading(false);
@@ -101,11 +103,17 @@ const AIChatWidget = () => {
               <div 
                 className={`max-w-[80%] rounded-lg p-3 ${
                   message.role === 'assistant' 
-                    ? 'bg-charcoal/30 border-white/10' 
+                    ? 'bg-charcoal/30 border-white/10 markdown-body' 
                     : 'bg-teal/20 text-white'
                 }`}
               >
-                {message.content}
+                {message.role === 'assistant' ? (
+                  <ReactMarkdown className="prose prose-invert prose-sm max-w-none">
+                    {message.content}
+                  </ReactMarkdown>
+                ) : (
+                  message.content
+                )}
               </div>
             </div>
           ))}
