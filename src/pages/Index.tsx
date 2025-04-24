@@ -28,7 +28,7 @@ const Index = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild className="bg-teal text-charcoal hover:bg-teal/90">
-                <a href="/docs/NeuralArc_Whitepaper.pdf">Download White Paper</a>
+                <Link to="/white-paper">View White Paper</Link>
               </Button>
               <Button asChild variant="outline">
                 <a href="#products">Explore the Stack ↓</a>

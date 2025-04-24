@@ -14,6 +14,7 @@ import MicroSaas from '@/pages/platforms/MicroSaas';
 import MarketOverview from '@/pages/MarketOverview';
 import FutureOutlook from '@/pages/FutureOutlook';
 import Canvas from '@/pages/Canvas';
+import WhitePaper from '@/pages/WhitePaper';
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/platforms/micro-saas" element={<MicroSaas />} />
           <Route path="/canvas" element={<Canvas />} />
+          <Route path="/white-paper" element={<WhitePaper />} />
         </Routes>
         <Footer />
       </div>
