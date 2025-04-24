@@ -1,6 +1,6 @@
 
 /**
- * API service for interacting with the Gemini AI
+ * API service for interacting with the DeepSeek AI
  */
 
 import { handleChatRequest } from '@/api/chat';
@@ -14,7 +14,7 @@ export const chatWithGemini = async (message: string, history: MessageHistory): 
   try {
     return await handleChatRequest(message, history);
   } catch (error) {
-    console.error('Error in chatWithGemini:', error);
+    console.error('Error in chat:', error);
     throw error;
   }
 };

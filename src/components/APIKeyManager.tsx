@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
@@ -14,7 +13,7 @@ const APIKeyManager = () => {
 
   useEffect(() => {
     // Check if key exists in localStorage on component mount
-    const storedKey = localStorage.getItem('gemini_api_key');
+    const storedKey = localStorage.getItem('deepseek_api_key');
     if (storedKey) {
       setApiKey(storedKey);
     }
@@ -30,7 +29,7 @@ const APIKeyManager = () => {
       return;
     }
 
-    localStorage.setItem('gemini_api_key', apiKey);
+    localStorage.setItem('deepseek_api_key', apiKey);
     toast({
       title: "API Key Saved",
       description: "Your API key has been saved successfully",
@@ -43,25 +42,22 @@ const APIKeyManager = () => {
     setIsTesting(true);
     
     try {
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${key}`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            contents: [{
-              role: 'user',
-              parts: [{ text: "Hello, this is a test message. Please respond with OK if you can read this." }]
-            }],
-            generationConfig: {
-              temperature: 0.1,
-              maxOutputTokens: 100,
-            },
-          }),
-        }
-      );
+      const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${key}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: 'deepseek-chat',
+          messages: [{
+            role: 'user',
+            content: "Hello, this is a test message. Please respond with OK if you can read this."
+          }],
+          temperature: 0.1,
+          max_tokens: 100,
+        }),
+      });
       
       const data = await response.json();
       
@@ -69,13 +65,13 @@ const APIKeyManager = () => {
         console.error('API test error:', data.error);
         toast({
           title: "API Key Test Failed",
-          description: data.error.message || "Could not connect to Gemini API",
+          description: data.error.message || "Could not connect to DeepSeek API",
           variant: "destructive",
         });
       } else {
         toast({
           title: "API Key Test Successful",
-          description: "Successfully connected to Gemini API",
+          description: "Successfully connected to DeepSeek API",
         });
       }
     } catch (error) {
@@ -104,29 +100,29 @@ const APIKeyManager = () => {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>Gemini API Key Settings</SheetTitle>
+          <SheetTitle>DeepSeek API Key Settings</SheetTitle>
         </SheetHeader>
         <div className="py-6 space-y-6">
           <div className="space-y-2">
             <label htmlFor="api-key" className="text-sm font-medium">
-              Enter your Gemini API Key
+              Enter your DeepSeek API Key
             </label>
             <Input
               id="api-key"
               type="password"
               value={apiKey}
               onChange={(e) => setApiKey(e.target.value)}
-              placeholder="Your Gemini API key"
+              placeholder="Your DeepSeek API key"
             />
             <p className="text-xs text-muted-foreground">
               Get your API key from{" "}
               <a 
-                href="https://aistudio.google.com/app/apikey" 
+                href="https://platform.deepseek.com/api"
                 target="_blank" 
                 rel="noreferrer"
                 className="text-teal underline"
               >
-                Google AI Studio
+                DeepSeek Platform
               </a>
             </p>
           </div>
