@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import FadeInSection from "@/components/FadeInSection";
@@ -6,6 +7,7 @@ import CountUp from "@/components/CountUp";
 import { StyledCard } from "@/components/ui/styled-card";
 import { SectionHeader } from "@/components/ui/section-header";
 import { useMarketMetricsVerifier } from "@/components/MarketMetricsVerifier";
+import { Card, CardContent } from "@/components/ui/card";
 
 // Updated chart data based on Investment Opportunity page
 const revenueProjectionsData = {
