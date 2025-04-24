@@ -2,7 +2,6 @@
 import React from 'react';
 import FadeInSection from '@/components/FadeInSection';
 import { Card } from '@/components/ui/card';
-import Image from '@/components/ui/image';
 
 const Canvas = () => {
   return (
