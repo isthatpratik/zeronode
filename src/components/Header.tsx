@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -23,6 +24,7 @@ const Header = () => {
     { path: '/nod-platform', label: 'NOD Platform' },
     { path: '/platforms/micro-saas', label: 'Micro SaaS Suite' },
     { path: '/canvas', label: 'Canvas' },
+    { path: '/white-paper', label: 'White Paper' },
   ];
 
   const investmentRoutes = [
@@ -46,7 +48,7 @@ const Header = () => {
               <span className="text-2xl font-space font-bold text-teal">
                 NeuralArc
               </span>
-              <span className="text-sm font-space text-offwhite/60 font-normal">
+              <span className="text-xs font-space text-offwhite/60 font-normal">
                 Investor Portal
               </span>
             </div>
