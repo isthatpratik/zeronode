@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import FadeInSection from '@/components/FadeInSection';
 import CountUp from '@/components/CountUp';
 import { useMarketMetricsVerifier } from '@/components/MarketMetricsVerifier';
+import HomeChat from '@/components/HomeChat';
 
 const Index = () => {
   const metrics = useMarketMetricsVerifier();
@@ -34,7 +35,21 @@ const Index = () => {
               </Button>
             </div>
           </FadeInSection>
+        </div>
+      </section>
 
+      {/* Chat Section */}
+      <section className="py-16 bg-gradient-to-b from-charcoal/0 to-charcoal/30">
+        <div className="grid-container">
+          <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12">
+            <HomeChat />
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* Market Stats Section */}
+      <section className="py-16 md:py-24">
+        <div className="grid-container">
           {/* Market Stats - Converted from table to cards */}
           <div className="col-span-4 md:col-span-8 lg:col-span-12 mt-16">
             <FadeInSection>

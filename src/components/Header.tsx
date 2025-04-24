@@ -1,9 +1,7 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import AIChatWidget from './AIChatWidget';
 import APIKeyManager from './APIKeyManager';
 import {
   NavigationMenu,
@@ -78,14 +76,12 @@ const Header = () => {
               </NavigationMenu>
             </div>
             <div className="flex items-center">
-              <AIChatWidget />
               <APIKeyManager />
             </div>
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center">
-            <AIChatWidget />
             <APIKeyManager />
             <Button variant="ghost" size="icon" onClick={toggleMenu} aria-label="Toggle Menu">
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

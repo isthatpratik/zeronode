@@ -1,4 +1,3 @@
-
 import React from "react";
 import FadeInSection from "@/components/FadeInSection";
 import { StyledCard } from "@/components/ui/styled-card";
@@ -15,6 +14,7 @@ const InvestmentOpportunity = () => {
   return (
     <main className="pt-24 pb-16">
       <div className="grid-container">
+        {/* Header Section */}
         <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-12">
           <StyledCard highlight className="text-center p-12">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
@@ -29,6 +29,7 @@ const InvestmentOpportunity = () => {
           </StyledCard>
         </FadeInSection>
 
+        {/* Stats Cards */}
         <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <StyledCard className="text-center p-6">
@@ -51,40 +52,37 @@ const InvestmentOpportunity = () => {
           </div>
         </FadeInSection>
 
+        {/* Main Content in Two Columns */}
         <div className="col-span-4 md:col-span-8 lg:col-span-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <FadeInSection className="space-y-8">
-            <section>
+          {/* Left Column */}
+          <FadeInSection>
+            <div className="space-y-8">
               <SeedRound />
-            </section>
-
-            <section>
-              <Benchmarks />
-            </section>
+              <StyledCard>
+                <Benchmarks />
+              </StyledCard>
+            </div>
           </FadeInSection>
 
-          <FadeInSection className="space-y-8">
-            <section>
-              <Forecast />
-            </section>
-
-            <section>
-              <Valuation />
-            </section>
+          {/* Right Column */}
+          <FadeInSection>
+            <div className="space-y-8">
+              <StyledCard>
+                <Forecast />
+              </StyledCard>
+              <StyledCard>
+                <Valuation />
+              </StyledCard>
+            </div>
           </FadeInSection>
         </div>
 
+        {/* Bottom Section */}
         <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mt-8">
-          <section>
-            <MicroSuite />
-          </section>
-        </FadeInSection>
-
-        <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mt-8">
-          <StyledCard className="text-center p-8">
-            <p className="text-xl font-medium max-w-3xl mx-auto">
-              Neural Arc offers investors a balanced opportunity: immediate fair-value entry with significant 
-              upside potential, driven by our dual enterprise platform and micro-AI tools strategy.
-            </p>
+          <StyledCard>
+            <div className="prose prose-invert max-w-none">
+              <MicroSuite />
+            </div>
           </StyledCard>
         </FadeInSection>
       </div>
