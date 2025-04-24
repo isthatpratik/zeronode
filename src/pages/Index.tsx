@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -217,48 +216,6 @@ const Index = () => {
                 </Link>
               </div>
             </div>
-          </FadeInSection>
-        </div>
-      </section>
-      
-      {/* Testimonials */}
-      <section className="py-16">
-        <div className="grid-container">
-          <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold">Client Success Stories</h2>
-          </FadeInSection>
-          
-          <FadeInSection delay={100} className="col-span-4 md:col-span-8 lg:col-span-4">
-            <Card className="h-full bg-charcoal/50 border-white/10">
-              <CardContent className="p-6">
-                <blockquote className="mb-4">
-                  "NeuralArc's ORB platform transformed our competitive intelligence, revealing patterns we would have missed through traditional analysis. It's been instrumental to our strategic planning."
-                </blockquote>
-                <p className="font-semibold">— Sarah Chen, Chief Strategy Officer</p>
-              </CardContent>
-            </Card>
-          </FadeInSection>
-          
-          <FadeInSection delay={200} className="col-span-4 md:col-span-8 lg:col-span-4">
-            <Card className="h-full bg-charcoal/50 border-white/10">
-              <CardContent className="p-6">
-                <blockquote className="mb-4">
-                  "The NOD platform has fundamentally changed how we make decisions, cutting our analysis time by 74% while improving accuracy. We now respond to market shifts weeks faster than our competitors."
-                </blockquote>
-                <p className="font-semibold">— Michael Rodriguez, VP Operations</p>
-              </CardContent>
-            </Card>
-          </FadeInSection>
-          
-          <FadeInSection delay={300} className="col-span-4 md:col-span-8 lg:col-span-4">
-            <Card className="h-full bg-charcoal/50 border-white/10">
-              <CardContent className="p-6">
-                <blockquote className="mb-4">
-                  "Their platforms have leveled the playing field for mid-sized enterprises like ours. We're now making data-driven decisions that rival those of companies ten times our size."
-                </blockquote>
-                <p className="font-semibold">— Jennifer Taylor, CEO</p>
-              </CardContent>
-            </Card>
           </FadeInSection>
         </div>
       </section>
