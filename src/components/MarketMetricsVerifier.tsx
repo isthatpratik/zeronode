@@ -22,22 +22,72 @@ export const useMarketMetricsVerifier = () => {
     const verifyMetrics = async () => {
       try {
         const apiKey = localStorage.getItem('deepseek_api_key');
-        if (!apiKey) return;
+        if (!apiKey) {
+          console.log('No DeepSeek API key found. Using default metrics.');
+          return;
+        }
+
+        toast({
+          title: "Verifying Market Metrics",
+          description: "Checking the accuracy of displayed metrics...",
+        });
 
         const response = await chatWithGemini(
-          "Please verify these market metrics and respond with updated numbers if needed: " +
+          "Please verify these market metrics and respond with updated numbers if needed. Format your response as JSON with the same structure: " +
           JSON.stringify(metrics),
           []
         );
 
-        if (response.includes('verified') || response.includes('accurate')) {
-          toast({
-            title: "Market Metrics Verified",
-            description: "The displayed metrics are up to date.",
-          });
+        console.log('DeepSeek verification response:', response);
+
+        // Try to parse the response as JSON
+        try {
+          if (response.includes('{') && response.includes('}')) {
+            // Extract JSON string from the response
+            const jsonStr = response.substring(
+              response.indexOf('{'),
+              response.lastIndexOf('}') + 1
+            );
+            
+            const updatedMetrics = JSON.parse(jsonStr);
+            
+            // Validate the structure before updating
+            if (Array.isArray(updatedMetrics) && 
+                updatedMetrics.length > 0 && 
+                updatedMetrics.every(m => 'name' in m && 'current' in m && 'future' in m && 'suffix' in m)) {
+              setMetrics(updatedMetrics);
+              toast({
+                title: "Market Metrics Updated",
+                description: "The displayed metrics have been refreshed with the latest data.",
+              });
+            } else if (response.includes('verified') || response.includes('accurate')) {
+              toast({
+                title: "Market Metrics Verified",
+                description: "The displayed metrics are up to date.",
+              });
+            }
+          } else if (response.includes('verified') || response.includes('accurate')) {
+            toast({
+              title: "Market Metrics Verified",
+              description: "The displayed metrics are up to date.",
+            });
+          }
+        } catch (parseError) {
+          console.error('Error parsing metrics JSON:', parseError);
+          if (response.includes('verified') || response.includes('accurate')) {
+            toast({
+              title: "Market Metrics Verified",
+              description: "The displayed metrics are up to date.",
+            });
+          }
         }
       } catch (error) {
         console.error('Error verifying metrics:', error);
+        toast({
+          title: "Verification Error",
+          description: "Unable to verify metrics. Using stored values.",
+          variant: "destructive",
+        });
       }
     };
 

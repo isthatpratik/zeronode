@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -120,9 +121,6 @@ const Header = () => {
                     </Link>
                   ))}
                 </div>
-                <Button asChild className="bg-teal text-charcoal hover:bg-teal/90 w-full mt-4">
-                  <Link to="/contact">Get Demo</Link>
-                </Button>
               </div>
             </nav>
           </div>
