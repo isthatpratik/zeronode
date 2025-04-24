@@ -1,17 +1,23 @@
-import { Request, Response } from 'express';
+/**
+ * API service for interacting with the Gemini AI on the client side
+ * This module replaces the Express-based implementation to work in a frontend-only environment
+ */
 
-// We'll define the AI chat API - this would be integrated with a backend framework
-export async function handleChatRequest(req: Request, res: Response) {
-  const { message, history } = req.body;
-  const apiKey = process.env.GEMINI_API_KEY;
+type MessageHistory = {
+  role: 'user' | 'assistant';
+  content: string;
+}[];
 
+export const handleChatRequest = async (message: string, history: MessageHistory): Promise<string> => {
+  const apiKey = localStorage.getItem('gemini_api_key');
+  
   if (!apiKey) {
-    return res.status(500).json({ error: 'API key not configured' });
+    throw new Error('API key not found. Please add your Gemini API key in settings.');
   }
-
+  
   try {
     // Format messages for Gemini API
-    const formattedMessages = history.map((msg: any) => ({
+    const formattedMessages = history.map((msg) => ({
       role: msg.role === 'user' ? 'user' : 'model',
       parts: [{ text: msg.content }]
     }));
@@ -78,14 +84,12 @@ export async function handleChatRequest(req: Request, res: Response) {
     
     if (data.error) {
       console.error('Gemini API error:', data.error);
-      return res.status(500).json({ error: data.error.message });
+      throw new Error(data.error.message || 'Error communicating with Gemini API');
     }
 
-    const aiResponse = data.candidates[0].content.parts[0].text;
-    return res.json({ response: aiResponse });
-
+    return data.candidates[0].content.parts[0].text;
   } catch (error) {
     console.error('Error processing chat request:', error);
-    return res.status(500).json({ error: 'Failed to process request' });
+    throw error;
   }
-}
+};
