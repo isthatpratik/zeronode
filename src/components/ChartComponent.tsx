@@ -76,7 +76,7 @@ const ChartComponent = ({
           titleFont: {
             family: 'Space Grotesk, sans-serif',
             size: 14,
-            weight: 'bold'
+            weight: 'bold' as 'bold' // Fix: Use a valid font weight value as type
           },
           bodyFont: {
             family: 'Inter, sans-serif',
