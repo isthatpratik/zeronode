@@ -33,20 +33,8 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-medium mb-3">Contact</h3>
             <address className="not-italic text-sm">
-              <p>Email: hello@neuralarc.ai</p>
-              <p>Phone: +1-415-555-0198</p>
+              <p>Email: aniket.tapre@neuralarc.ai</p>
             </address>
-            <div className="flex space-x-4 mt-4">
-              <a href="#" aria-label="LinkedIn" className="text-muted-foreground hover:text-teal">
-                LinkedIn
-              </a>
-              <a href="#" aria-label="Twitter" className="text-muted-foreground hover:text-teal">
-                Twitter
-              </a>
-              <a href="#" aria-label="YouTube" className="text-muted-foreground hover:text-teal">
-                YouTube
-              </a>
-            </div>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-white/10 text-sm text-muted-foreground">

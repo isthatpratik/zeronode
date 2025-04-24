@@ -1,12 +1,14 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import FadeInSection from '@/components/FadeInSection';
 import CountUp from '@/components/CountUp';
+import { useMarketMetricsVerifier } from '@/components/MarketMetricsVerifier';
 
 const Index = () => {
+  const metrics = useMarketMetricsVerifier();
+
   return (
     <main className="pt-24 pb-16">
       {/* Hero Section */}
@@ -38,50 +40,21 @@ const Index = () => {
             <FadeInSection>
               <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Market Metrics</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Global AI Market Card */}
-                <Card className="bg-charcoal/30 border-white/10 overflow-hidden">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-medium text-muted-foreground mb-2">Global AI Market</h3>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-lg">Today:</span>
-                      <span className="text-2xl font-bold text-teal">$ <CountUp end={758} suffix=" B" /></span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-lg">2034:</span>
-                      <span className="text-2xl font-bold text-teal">$ <CountUp end={3.68} suffix=" T" /></span>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* CI-Tools TAM Card */}
-                <Card className="bg-charcoal/30 border-white/10 overflow-hidden">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-medium text-muted-foreground mb-2">CI-Tools TAM</h3>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-lg">Today:</span>
-                      <span className="text-2xl font-bold text-teal">$ <CountUp end={495} suffix=" M" /></span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-lg">2034:</span>
-                      <span className="text-2xl font-bold text-teal">$ <CountUp end={1.12} suffix=" B" /></span>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Analytics TAM Card */}
-                <Card className="bg-charcoal/30 border-white/10 overflow-hidden">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-medium text-muted-foreground mb-2">Analytics TAM</h3>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-lg">Today:</span>
-                      <span className="text-2xl font-bold text-teal">$ <CountUp end={88} suffix=" B" /></span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-lg">2034:</span>
-                      <span className="text-2xl font-bold text-teal">$ <CountUp end={483} suffix=" B" /></span>
-                    </div>
-                  </CardContent>
-                </Card>
+                {metrics.map((metric, index) => (
+                  <Card key={index} className="bg-charcoal/30 border-white/10 overflow-hidden">
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-medium text-muted-foreground mb-2">{metric.name}</h3>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-lg">Today:</span>
+                        <span className="text-2xl font-bold text-teal">$ <CountUp end={metric.current} suffix={metric.suffix} /></span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-lg">2034:</span>
+                        <span className="text-2xl font-bold text-teal">$ <CountUp end={metric.future} suffix={metric.suffix} /></span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
               <p className="mt-8 text-center text-muted-foreground max-w-3xl mx-auto">
                 Neural Arc sits at the intersection of <strong>both fastest-growing AI segments</strong>: predictive competitive intelligence <strong>and</strong> decision-automation analytics—while monetising a third vector via viral Micro AI apps.
@@ -98,41 +71,47 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">The Three Pillars</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* ORB Card */}
-              <Card className="bg-charcoal/50 border-white/10">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-2">ORB</h3>
-                  <p className="text-teal italic mb-4">Outlast. Reimagine. Build.</p>
-                  <p className="mb-4">Predicts competitor moves 30-120 days early via a neural decision matrix.</p>
-                  <p className="text-muted-foreground mb-2">For: Strategy, Product, C-Suite</p>
-                  <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">POC Phase</span>
-                </CardContent>
-              </Card>
+              <Link to="/orb-platform">
+                <Card className="bg-charcoal/50 border-white/10 transition-transform duration-300 hover:scale-105 hover:bg-charcoal/70 cursor-pointer h-full">
+                  <CardContent className="p-6">
+                    <h3 className="text-2xl font-bold mb-2">ORB</h3>
+                    <p className="text-teal italic mb-4">Outlast. Reimagine. Build.</p>
+                    <p className="mb-4">Predicts competitor moves 30-120 days early via a neural decision matrix.</p>
+                    <p className="text-muted-foreground mb-2">For: Strategy, Product, C-Suite</p>
+                    <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">POC Phase</span>
+                  </CardContent>
+                </Card>
+              </Link>
 
               {/* NOD Card */}
-              <Card className="bg-charcoal/50 border-white/10">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-2">NOD</h3>
-                  <p className="text-teal italic mb-4">Navigate. Optimize. Disrupt.</p>
-                  <p className="mb-4">Ingests every data stream, surfaces ranked actions, closes the insight-to-action gap.</p>
-                  <p className="text-muted-foreground mb-2">For: Ops, Finance, Execs</p>
-                  <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">Prototype</span>
-                </CardContent>
-              </Card>
+              <Link to="/nod-platform">
+                <Card className="bg-charcoal/50 border-white/10 transition-transform duration-300 hover:scale-105 hover:bg-charcoal/70 cursor-pointer h-full">
+                  <CardContent className="p-6">
+                    <h3 className="text-2xl font-bold mb-2">NOD</h3>
+                    <p className="text-teal italic mb-4">Navigate. Optimize. Disrupt.</p>
+                    <p className="mb-4">Ingests every data stream, surfaces ranked actions, closes the insight-to-action gap.</p>
+                    <p className="text-muted-foreground mb-2">For: Ops, Finance, Execs</p>
+                    <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">Prototype</span>
+                  </CardContent>
+                </Card>
+              </Link>
 
               {/* Micro AI Suite Card */}
-              <Card className="bg-charcoal/50 border-white/10">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-2">Micro AI SaaS Suite</h3>
-                  <p className="text-teal italic mb-4">Solve a pain in minutes.</p>
-                  <p className="mb-4">Nine bite-sized AI utilities with shared auth & billing.</p>
-                  <p className="text-muted-foreground mb-2">For: Individuals → Teams → SMBs</p>
-                  <div className="space-x-2">
-                    <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">3 Beta</span>
-                    <span className="inline-block bg-teal/10 text-teal px-2 py-1 rounded">2 Coding</span>
-                    <span className="inline-block bg-teal/5 text-teal px-2 py-1 rounded">4 Planned</span>
-                  </div>
-                </CardContent>
-              </Card>
+              <Link to="/platforms/micro-saas">
+                <Card className="bg-charcoal/50 border-white/10 transition-transform duration-300 hover:scale-105 hover:bg-charcoal/70 cursor-pointer h-full">
+                  <CardContent className="p-6">
+                    <h3 className="text-2xl font-bold mb-2">Micro AI SaaS Suite</h3>
+                    <p className="text-teal italic mb-4">Solve a pain in minutes.</p>
+                    <p className="mb-4">Nine bite-sized AI utilities with shared auth & billing.</p>
+                    <p className="text-muted-foreground mb-2">For: Individuals → Teams → SMBs</p>
+                    <div className="space-x-2">
+                      <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">3 Beta</span>
+                      <span className="inline-block bg-teal/10 text-teal px-2 py-1 rounded">2 Coding</span>
+                      <span className="inline-block bg-teal/5 text-teal px-2 py-1 rounded">4 Planned</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             </div>
           </FadeInSection>
         </div>

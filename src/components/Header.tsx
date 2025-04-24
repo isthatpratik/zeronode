@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -78,9 +77,6 @@ const Header = () => {
               </NavigationMenu>
             </div>
             <div className="flex items-center">
-              <Button asChild className="bg-teal text-charcoal hover:bg-teal/90">
-                <Link to="/contact">Get Demo</Link>
-              </Button>
               <AIChatWidget />
               <APIKeyManager />
             </div>
