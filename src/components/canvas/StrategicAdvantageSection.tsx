@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card } from '@/components/ui/card';
 import FadeInSection from '@/components/FadeInSection';
@@ -30,8 +29,8 @@ const StrategicAdvantageSection = () => {
   ];
 
   return (
-    <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-12">
-      <StyledCard highlight>
+    <FadeInSection className="mb-0">
+      <StyledCard>
         <SectionHeader number="05" title="Strategic Advantage and Market Opportunity" className="mb-8" />
         
         <div className="space-y-8">

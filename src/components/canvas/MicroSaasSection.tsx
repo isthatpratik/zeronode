@@ -1,13 +1,11 @@
-
 import React from 'react';
-import { Card } from '@/components/ui/card';
-import FadeInSection from '@/components/FadeInSection';
-import { SectionHeader } from '@/components/ui/section-header';
 import { StyledCard } from '@/components/ui/styled-card';
+import { SectionHeader } from '@/components/ui/section-header';
+import FadeInSection from '@/components/FadeInSection';
 
 const MicroSaasSection = () => {
   return (
-    <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-12">
+    <FadeInSection className="mb-0">
       <StyledCard>
         <SectionHeader number="03" title="AI SaaS Tools and Micro-Apps" />
         <div className="space-y-6">

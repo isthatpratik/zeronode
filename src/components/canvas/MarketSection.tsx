@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card } from '@/components/ui/card';
 import FadeInSection from '@/components/FadeInSection';
@@ -7,7 +6,7 @@ import { StyledCard } from '@/components/ui/styled-card';
 
 const MarketSection = () => {
   return (
-    <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-12">
+    <FadeInSection className="mb-0">
       <StyledCard>
         <SectionHeader number="01" title="Competitive Intelligence Tools (External Insights)" />
         <div className="space-y-6">
