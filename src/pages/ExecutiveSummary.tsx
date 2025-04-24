@@ -29,8 +29,8 @@ const ExecutiveSummary = () => {
                   <TableRow>
                     <TableCell className="font-bold">Instrument</TableCell>
                     <TableCell>
-                      Convertible SAFE (MFN, 20 % discount, 6 % interest) <br />
-                      <em>or</em> straight equity ≈ 4 % for US $ 500 K
+                      Convertible SAFE (MFN, 20% discount, 6% interest) <br />
+                      <em>or</em> straight equity ≈ 4% for US $ 500 K
                     </TableCell>
                   </TableRow>
                   <TableRow>
@@ -97,8 +97,8 @@ const ExecutiveSummary = () => {
                   </TableRow>
                 </TableBody>
               </Table>
-              <p className="text-sm text-muted-foreground mt-2">*Assumes standard 20–25 % dilution when valuations weren't disclosed.</p>
-              <p className="font-medium mt-4">Take-away: our US $ 12 M cap sits right on today's AI-seed median.</p>
+              <p className="text-sm text-muted-foreground mt-2">*Assumes standard 20-25% dilution when valuations weren&apos;t disclosed.</p>
+              <p className="font-medium mt-4">Take-away: our US $ 12 M cap sits right on today&apos;s AI-seed median.</p>
             </section>
 
             {/* 3. Five-Year Forecast */}
@@ -135,7 +135,7 @@ const ExecutiveSummary = () => {
                 </TableBody>
               </Table>
               <p className="text-sm text-muted-foreground mt-4">
-                Assumptions: modest ACV lift (20 K→32 K), micro-ARPU $2.5→3.5, GM > 84 %, churn < 4 %, NDR > 130 %.
+                Assumptions: modest ACV lift (20 K→32 K), micro-ARPU $2.5→3.5, GM &gt; 84%, churn &lt; 4%, NDR &gt; 130%.
               </p>
             </section>
 
@@ -158,17 +158,17 @@ const ExecutiveSummary = () => {
                   </TableRow>
                   <TableRow>
                     <TableCell>High-risk discount</TableCell>
-                    <TableCell>35 % @ 3 yrs</TableCell>
+                    <TableCell>35% @ 3 yrs</TableCell>
                     <TableCell className="font-bold">$18.5 M PV</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>5-yr DCF</TableCell>
-                    <TableCell>Cash-flows above, 35 % r</TableCell>
+                    <TableCell>Cash-flows above, 35% r</TableCell>
                     <TableCell className="font-bold">$16.3 M PV</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
-              <p className="font-medium mt-4">$16-19 M present value ⇒ ~30 % upside to our $12 M cap.</p>
+              <p className="font-medium mt-4">$16-19 M present value ⇒ ~30% upside to our $12 M cap.</p>
             </section>
 
             {/* 6. Leadership Team */}
@@ -192,7 +192,7 @@ const ExecutiveSummary = () => {
               <ul className="list-disc list-inside space-y-2">
                 <li>Market-anchored valuation cap.</li>
                 <li>Dual revenue engines (platform + viral micro-apps).</li>
-                <li>Efficient economics: GM 84 %, CAC payback < 6 mo, NDR > 140 % by 2027.</li>
+                <li>Efficient economics: GM 84%, CAC payback &lt; 6 mo, NDR &gt; 140% by 2027.</li>
                 <li>Proprietary 14.3 B-parameter neural stack + micro-app fabric.</li>
                 <li>18-month runway to ≥ 30 enterprise clients and three more app launches.</li>
               </ul>
@@ -204,8 +204,8 @@ const ExecutiveSummary = () => {
               <Card className="bg-charcoal/30 border-white/10">
                 <CardContent className="p-6">
                   <ul className="list-disc list-inside space-y-2">
-                    <li><strong>Convertible SAFE</strong> (preferred) — MFN, 20 % discount, 6 % interest, 24-mo maturity.</li>
-                    <li><strong>Straight equity</strong> — US $ 12 M pre-money (≈ 4 % for US $ 500 K).</li>
+                    <li><strong>Convertible SAFE</strong> (preferred) — MFN, 20% discount, 6% interest, 24-mo maturity.</li>
+                    <li><strong>Straight equity</strong> — US $ 12 M pre-money (≈ 4% for US $ 500 K).</li>
                   </ul>
                 </CardContent>
               </Card>
