@@ -35,7 +35,7 @@ const Login = () => {
     }
     // TODO: Add actual login logic
     console.log('Login attempt with:', { email, password, captcha });
-    navigate('/'); // Navigate to home page after successful login
+    navigate('/home'); // Navigate to home page after successful login
   };
 
   return (
@@ -50,9 +50,6 @@ const Login = () => {
           <h1 className="text-2xl font-space font-bold text-teal mb-1">
             NeuralArc
           </h1>
-          <p className="text-sm text-offwhite/60">
-            Investor Portal
-          </p>
         </div>
 
         <div className="bg-charcoal/30 backdrop-blur-sm border border-white/10 rounded-lg p-6 shadow-xl">

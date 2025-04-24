@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Index from '@/pages/Index';
@@ -18,13 +19,15 @@ import Login from '@/pages/Login';
 
 const AppContent = () => {
   const location = useLocation();
-  const isLoginPage = location.pathname === '/login';
+  const isLoginPage = location.pathname === '/login' || location.pathname === '/';
 
   return (
     <div className="min-h-screen bg-charcoal">
       {!isLoginPage && <Header />}
       <Routes>
-        <Route path="/" element={<Index />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Index />} />
         <Route path="/visualizations" element={<Visualizations />} />
         <Route path="/executive-summary" element={<ExecutiveSummary />} />
         <Route path="/orb-platform" element={<OrbPlatform />} />
@@ -36,7 +39,6 @@ const AppContent = () => {
         <Route path="/platforms/micro-saas" element={<MicroSaas />} />
         <Route path="/canvas" element={<Canvas />} />
         <Route path="/white-paper" element={<WhitePaper />} />
-        <Route path="/login" element={<Login />} />
       </Routes>
       {!isLoginPage && <Footer />}
     </div>
