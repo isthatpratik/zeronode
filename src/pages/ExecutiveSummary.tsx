@@ -1,79 +1,215 @@
 
 import FadeInSection from "@/components/FadeInSection";
-import CountUp from "@/components/CountUp";
 import { Card, CardContent } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const ExecutiveSummary = () => {
   return (
     <main className="pt-24 pb-16">
       <div className="grid-container">
-        <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">Executive Summary</h1>
-          
-          <div className="mt-8 max-w-4xl">
-            <p className="text-lg mb-6">
-              NeuralArc is revolutionizing how enterprises process information and make strategic decisions through two complementary platforms: ORB (competitive intelligence) and NOD (decision intelligence). Our neural network architectures, developed over five years of R&D, offer significant advantages over traditional business intelligence approaches.
+        <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12">
+          <div className="max-w-4xl mx-auto">
+            {/* Hero Section */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+              US $ 500 K Convertible SAFE — Neural Arc
+            </h1>
+            <p className="text-xl text-muted-foreground mb-12">
+              A fair-value, median-cap entry into neural intelligence.
             </p>
-            
-            <h2 className="text-2xl font-bold mt-12 mb-4">Market Opportunity</h2>
-            <p>
-              The global AI market size is projected to grow from $328.34 billion in 2021 to $1,394.30 billion in 2029 at a CAGR of 20.1%. Within this, the business intelligence segment is estimated at $25.82 billion in 2022, growing to $43.03 billion by 2028. NeuralArc's solutions target the enterprise segment of this market, focusing on Fortune 1000 companies and rapidly scaling mid-market enterprises ($250M-$1B revenue).
-            </p>
-            
-            <h2 className="text-2xl font-bold mt-12 mb-4">Competitive Landscape</h2>
-            <p>
-              While there are numerous BI tools and an emerging class of AI-augmented analytics platforms, NeuralArc stands apart through its purpose-built neural architectures designed specifically for business applications. Unlike general-purpose AI platforms that require extensive customization, our solutions deliver immediate, specialized value in competitive intelligence and decision acceleration.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-              <FadeInSection delay={100}>
-                <Card className="bg-charcoal/30 border-white/10">
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-3">ORB Platform Advantages</h3>
-                    <ul className="space-y-2">
-                      <li>• Quantum-inspired algorithms for predictive capability</li>
-                      <li>• Pattern recognition across disparate data sources</li>
-                      <li>• Adapts to industry-specific competitive dynamics</li>
-                      <li>• <CountUp end={267} suffix="%" className="text-teal" /> improvement in early threat detection</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </FadeInSection>
-              
-              <FadeInSection delay={200}>
-                <Card className="bg-charcoal/30 border-white/10">
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-3">NOD Platform Advantages</h3>
-                    <ul className="space-y-2">
-                      <li>• <CountUp end={14.3} suffix="B" className="text-teal" /> parameters for complex decision modeling</li>
-                      <li>• <CountUp end={74} suffix="%" className="text-teal" /> reduction in time from data to decision</li>
-                      <li>• Integrates human expertise with neural processing</li>
-                      <li>• Explainable AI for critical business decisions</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </FadeInSection>
-            </div>
-            
-            <h2 className="text-2xl font-bold mt-12 mb-4">Traction & Validation</h2>
-            <p>
-              NeuralArc has secured $18M in venture funding to date and has onboarded 75 enterprise clients across financial services, healthcare, manufacturing, and technology sectors. Notable clients include three Fortune 100 companies and partnerships with two of the Big Five consulting firms who now recommend our platforms to their clients.
-            </p>
-            
-            <h2 className="text-2xl font-bold mt-12 mb-4">Financial Projections</h2>
-            <p>
-              Revenue is projected to grow from $18M in 2024 to $240M by 2028 (90% CAGR), with gross margins expanding from 65% to 82% as we scale. Client acquisition costs are offset by a high LTV:CAC ratio of 7.8:1 and a net revenue retention of 135%, driven by our tiered pricing model and expanding use cases within client organizations.
-            </p>
-            
-            <h2 className="text-2xl font-bold mt-12 mb-4">Leadership</h2>
-            <p>
-              Our founding team combines expertise in neural networks (3 PhD researchers with over 40 published papers), enterprise software (executives from Oracle, Salesforce, and Palantir), and business intelligence (former McKinsey and BCG partners). This unique blend of technical and domain expertise has enabled us to build platforms that are both cutting-edge and deeply practical for enterprise applications.
-            </p>
-            
-            <h2 className="text-2xl font-bold mt-12 mb-4">Strategic Vision</h2>
-            <p>
-              NeuralArc aims to define the emerging category of Neural Business Intelligence—moving enterprises beyond traditional analytics to neural-powered systems that learn, adapt, and provide unprecedented competitive advantages. Our long-term vision is to become the neural layer for enterprise decision-making across all industries and functional areas.
-            </p>
+
+            {/* 1. Offer at a Glance */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold mb-6">1 ▸ Offer at a Glance</h2>
+              <Table>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className="font-bold">Capital Sought</TableCell>
+                    <TableCell className="font-bold">US $ 500 000</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-bold">Instrument</TableCell>
+                    <TableCell>
+                      Convertible SAFE (MFN, 20 % discount, 6 % interest) <br />
+                      <em>or</em> straight equity ≈ 4 % for US $ 500 K
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-bold">Pre-money Valuation Cap</TableCell>
+                    <TableCell className="font-bold">US $ 12 M</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-bold">Maturity</TableCell>
+                    <TableCell>24 months (auto-convert at next equity round)</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-bold">Minimum Ticket</TableCell>
+                    <TableCell>US $ 25 000</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-bold">Runway Extension</TableCell>
+                    <TableCell>18 months</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </section>
+
+            {/* 2. Benchmarks */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold mb-6">2 ▸ How Does US $ 12 M Compare? — 2025 Benchmarks</h2>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Company (2025)</TableHead>
+                    <TableHead>Focus</TableHead>
+                    <TableHead>Round</TableHead>
+                    <TableHead>Raise</TableHead>
+                    <TableHead>Implied Pre-money*</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell>Jurimesh</TableCell>
+                    <TableCell>AI due-diligence</TableCell>
+                    <TableCell>Pre-Seed</TableCell>
+                    <TableCell>€ 1.6 M</TableCell>
+                    <TableCell>≈ US $ 8 M</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>WilsonAI</TableCell>
+                    <TableCell>AI paralegal</TableCell>
+                    <TableCell>Pre-Seed</TableCell>
+                    <TableCell>US $ 1.7 M</TableCell>
+                    <TableCell>≈ US $ 8 M</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Augmetec</TableCell>
+                    <TableCell>Investigations AI</TableCell>
+                    <TableCell>Seed</TableCell>
+                    <TableCell>£ 2 M</TableCell>
+                    <TableCell>≈ US $ 10 M</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-bold">Sector Median</TableCell>
+                    <TableCell>—</TableCell>
+                    <TableCell>—</TableCell>
+                    <TableCell>—</TableCell>
+                    <TableCell className="font-bold">US $ 12 M</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+              <p className="text-sm text-muted-foreground mt-2">*Assumes standard 20–25 % dilution when valuations weren't disclosed.</p>
+              <p className="font-medium mt-4">Take-away: our US $ 12 M cap sits right on today's AI-seed median.</p>
+            </section>
+
+            {/* 3. Five-Year Forecast */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold mb-6">3 ▸ Five-Year Conservative Forecast</h2>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Year</TableHead>
+                    <TableHead>Enterprise Clients</TableHead>
+                    <TableHead>Platform ARR (US $ M)</TableHead>
+                    <TableHead>Active Micro-app Users</TableHead>
+                    <TableHead>Micro-app ARR (US $ M)</TableHead>
+                    <TableHead>Total ARR</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {[
+                    { year: "2025", clients: "10", platform: "0.20", users: "5 k", microArr: "0.15", total: "0.35" },
+                    { year: "2026", clients: "30", platform: "0.72", users: "20 k", microArr: "0.45", total: "1.17" },
+                    { year: "2027", clients: "75", platform: "2.03", users: "55 k", microArr: "1.00", total: "3.03" },
+                    { year: "2028", clients: "150", platform: "4.50", users: "100 k", microArr: "2.50", total: "7.00" },
+                    { year: "2029", clients: "250", platform: "8.00", users: "160 k", microArr: "4.10", total: "12.10" }
+                  ].map((row) => (
+                    <TableRow key={row.year}>
+                      <TableCell>{row.year}</TableCell>
+                      <TableCell>{row.clients}</TableCell>
+                      <TableCell>{row.platform}</TableCell>
+                      <TableCell>{row.users}</TableCell>
+                      <TableCell>{row.microArr}</TableCell>
+                      <TableCell className="font-bold">{row.total}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+              <p className="text-sm text-muted-foreground mt-4">
+                Assumptions: modest ACV lift (20 K→32 K), micro-ARPU $2.5→3.5, GM > 84 %, churn < 4 %, NDR > 130 %.
+              </p>
+            </section>
+
+            {/* 4. Valuation Math */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold mb-6">4 ▸ Valuation Math (Discounted)</h2>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Method</TableHead>
+                    <TableHead>Inputs</TableHead>
+                    <TableHead>PV Today</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell>Forward-ARR Multiple</TableCell>
+                    <TableCell>2028E ARR $7 M × 7×</TableCell>
+                    <TableCell className="font-bold">$49 M EV</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>High-risk discount</TableCell>
+                    <TableCell>35 % @ 3 yrs</TableCell>
+                    <TableCell className="font-bold">$18.5 M PV</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>5-yr DCF</TableCell>
+                    <TableCell>Cash-flows above, 35 % r</TableCell>
+                    <TableCell className="font-bold">$16.3 M PV</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+              <p className="font-medium mt-4">$16-19 M present value ⇒ ~30 % upside to our $12 M cap.</p>
+            </section>
+
+            {/* 6. Leadership Team */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold mb-6">6 ▸ Leadership Team</h2>
+              <Card className="bg-charcoal/30 border-white/10">
+                <CardContent className="p-6">
+                  <p className="text-lg mb-2">
+                    A <strong>mixed team with 35+ years of combined technology leadership experience.</strong>
+                  </p>
+                  <p className="text-lg">
+                    The <strong>founder is a serial entrepreneur with multiple successful exits over the last ~15 years.</strong>
+                  </p>
+                </CardContent>
+              </Card>
+            </section>
+
+            {/* 7. Why Invest Now */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold mb-6">7 ▸ Why Invest Now</h2>
+              <ul className="list-disc list-inside space-y-2">
+                <li>Market-anchored valuation cap.</li>
+                <li>Dual revenue engines (platform + viral micro-apps).</li>
+                <li>Efficient economics: GM 84 %, CAC payback < 6 mo, NDR > 140 % by 2027.</li>
+                <li>Proprietary 14.3 B-parameter neural stack + micro-app fabric.</li>
+                <li>18-month runway to ≥ 30 enterprise clients and three more app launches.</li>
+              </ul>
+            </section>
+
+            {/* 8. Flexible Deal Structure */}
+            <section>
+              <h2 className="text-2xl font-bold mb-6">8 ▸ Flexible Deal Structure</h2>
+              <Card className="bg-charcoal/30 border-white/10">
+                <CardContent className="p-6">
+                  <ul className="list-disc list-inside space-y-2">
+                    <li><strong>Convertible SAFE</strong> (preferred) — MFN, 20 % discount, 6 % interest, 24-mo maturity.</li>
+                    <li><strong>Straight equity</strong> — US $ 12 M pre-money (≈ 4 % for US $ 500 K).</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </section>
           </div>
         </FadeInSection>
       </div>

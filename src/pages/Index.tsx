@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -72,7 +71,7 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">The Three Pillars</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* ORB Card */}
-              <Link to="/orb-platform" className="no-underline">
+              <Link to="/orb-platform" className="no-underline hover:no-underline">
                 <Card className="bg-charcoal/50 border-white/10 transition-transform duration-300 hover:scale-105 hover:bg-charcoal/70 cursor-pointer h-full">
                   <CardContent className="p-6">
                     <h3 className="text-2xl font-bold mb-2">ORB</h3>
@@ -85,7 +84,7 @@ const Index = () => {
               </Link>
 
               {/* NOD Card */}
-              <Link to="/nod-platform" className="no-underline">
+              <Link to="/nod-platform" className="no-underline hover:no-underline">
                 <Card className="bg-charcoal/50 border-white/10 transition-transform duration-300 hover:scale-105 hover:bg-charcoal/70 cursor-pointer h-full">
                   <CardContent className="p-6">
                     <h3 className="text-2xl font-bold mb-2">NOD</h3>
@@ -98,7 +97,7 @@ const Index = () => {
               </Link>
 
               {/* Micro AI Suite Card */}
-              <Link to="/platforms/micro-saas" className="no-underline">
+              <Link to="/platforms/micro-saas" className="no-underline hover:no-underline">
                 <Card className="bg-charcoal/50 border-white/10 transition-transform duration-300 hover:scale-105 hover:bg-charcoal/70 cursor-pointer h-full">
                   <CardContent className="p-6">
                     <h3 className="text-2xl font-bold mb-2">Micro AI SaaS Suite</h3>
