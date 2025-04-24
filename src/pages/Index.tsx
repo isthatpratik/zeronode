@@ -1,23 +1,10 @@
-import { useEffect } from 'react';
+
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import FadeInSection from '@/components/FadeInSection';
 import CountUp from '@/components/CountUp';
-import ChartComponent from '@/components/ChartComponent';
-
-const marketData = {
-  labels: ['2021', '2022', '2023', '2024', '2025'],
-  datasets: [
-    {
-      label: 'Global AI Market Size ($B)',
-      data: [328.34, 422.37, 540.29, 634.92, 757.58],
-      backgroundColor: '#28D9D9',
-      borderColor: '#28D9D9'
-    }
-  ]
-};
 
 const Index = () => {
   return (
@@ -26,211 +13,131 @@ const Index = () => {
       <section className="py-16 md:py-24">
         <div className="grid-container">
           <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 text-center mb-12">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Pioneering Neural Business Intelligence</h1>
-            <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8">
-              NeuralArc's revolutionary platforms transform competitive intelligence and decision acceleration through proprietary neural architecture.
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+              Neural Intelligence for{' '}
+              <span className="underline decoration-teal">Business Evolution</span>
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              Neural Arc gives every organisation—startup to enterprise—the power to{' '}
+              <strong>see competitive moves before they happen</strong>,{' '}
+              <strong>make optimal decisions in real time</strong>,{' '}
+              and <strong>solve niche problems with lightning-fast Micro AI tools</strong>.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild className="bg-teal text-charcoal hover:bg-teal/90">
-                <Link to="/contact">Get Demo</Link>
+                <a href="/docs/NeuralArc_Whitepaper.pdf">Download White Paper</a>
               </Button>
               <Button asChild variant="outline">
-                <Link to="/executive-summary">Read White Paper</Link>
+                <a href="#products">Explore the Stack ↓</a>
               </Button>
             </div>
           </FadeInSection>
-          
-          {/* Stats */}
-          <div className="col-span-4 md:col-span-8 lg:col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            <FadeInSection delay={100}>
-              <Card className="bg-charcoal/50 border-white/10">
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-2xl font-semibold mb-2">
-                    $<CountUp end={757.58} decimals={2} suffix="B" className="text-teal" />
-                  </h3>
-                  <p className="text-sm text-muted-foreground">Global AI Market Size in 2025</p>
-                </CardContent>
-              </Card>
-            </FadeInSection>
-            
-            <FadeInSection delay={200}>
-              <Card className="bg-charcoal/50 border-white/10">
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-2xl font-semibold mb-2">
-                    <CountUp end={33.83} suffix="%" className="text-teal" />
-                  </h3>
-                  <p className="text-sm text-muted-foreground">AI Market CAGR Through 2034</p>
-                </CardContent>
-              </Card>
-            </FadeInSection>
-            
-            <FadeInSection delay={300}>
-              <Card className="bg-charcoal/50 border-white/10">
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-2xl font-semibold mb-2">
-                    <CountUp end={14.3} suffix="B" className="text-teal" />
-                  </h3>
-                  <p className="text-sm text-muted-foreground">Parameters in NOD Platform</p>
-                </CardContent>
-              </Card>
-            </FadeInSection>
-            
-            <FadeInSection delay={400}>
-              <Card className="bg-charcoal/50 border-white/10">
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-2xl font-semibold mb-2">
-                    <CountUp end={74} suffix="%" className="text-teal" />
-                  </h3>
-                  <p className="text-sm text-muted-foreground">Reduction in Time from Data to Decision</p>
+
+          {/* Market Stats */}
+          <div className="col-span-4 md:col-span-8 lg:col-span-12 mt-16">
+            <FadeInSection>
+              <Card className="bg-charcoal/30 border-white/10">
+                <CardContent className="p-6">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Metric</TableHead>
+                        <TableHead>Today</TableHead>
+                        <TableHead>2034</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>Global AI Market</TableCell>
+                        <TableCell>$ <CountUp end={758} suffix=" B" /></TableCell>
+                        <TableCell>$ <CountUp end={3.68} suffix=" T" /></TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>CI-Tools TAM</TableCell>
+                        <TableCell>$ <CountUp end={495} suffix=" M" /></TableCell>
+                        <TableCell>$ <CountUp end={1.12} suffix=" B" /></TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Analytics TAM</TableCell>
+                        <TableCell>$ <CountUp end={88} suffix=" B" /></TableCell>
+                        <TableCell>$ <CountUp end={483} suffix=" B" /></TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                  <p className="mt-4 text-center text-muted-foreground">
+                    Neural Arc sits at the intersection of <strong>both fastest-growing AI segments</strong>: predictive competitive intelligence <strong>and</strong> decision-automation analytics—while monetising a third vector via viral Micro AI apps.
+                  </p>
                 </CardContent>
               </Card>
             </FadeInSection>
           </div>
         </div>
       </section>
-      
-      {/* Platforms Section */}
-      <section className="py-16 bg-charcoal/30">
-        <div className="grid-container">
-          <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold">Revolutionary Neural Platforms</h2>
-          </FadeInSection>
-          
-          <FadeInSection delay={100} className="col-span-4 md:col-span-4 lg:col-span-6">
-            <Card className="h-full bg-charcoal/50 border-white/10 hover:border-teal/50 transition duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-semibold mb-3">ORB Platform – <em>Outlast. Reimagine. Build.</em></h3>
-                <p className="mb-6">The ORB platform transforms competitive intelligence through predictive capabilities powered by quantum-inspired algorithms.</p>
-                <Button asChild variant="outline">
-                  <Link to="/orb-platform" className="flex items-center gap-2">
-                    Learn More <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </FadeInSection>
-          
-          <FadeInSection delay={200} className="col-span-4 md:col-span-4 lg:col-span-6">
-            <Card className="h-full bg-charcoal/50 border-white/10 hover:border-teal/50 transition duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-semibold mb-3">NOD Platform – <em>Navigate. Optimize. Disrupt.</em></h3>
-                <p className="mb-6">The NOD platform leverages a 14.3 billion-parameter advantage to transform internal decision-making processes.</p>
-                <Button asChild variant="outline">
-                  <Link to="/nod-platform" className="flex items-center gap-2">
-                    Learn More <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </FadeInSection>
-        </div>
-      </section>
-      
-      {/* Market Opportunity Section */}
-      <section className="py-16">
-        <div className="grid-container">
-          <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold">Market Opportunity</h2>
-          </FadeInSection>
-          
-          <FadeInSection delay={100} className="col-span-4 md:col-span-4 lg:col-span-4">
-            <Card className="h-full bg-charcoal/50 border-white/10">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-3">Competitive Intelligence</h3>
-                <p>Traditional competitive intelligence relies on historical data and is often unable to predict emerging threats. NeuralArc's ORB platform uses neural networks to identify patterns invisible to traditional analysis.</p>
-              </CardContent>
-            </Card>
-          </FadeInSection>
-          
-          <FadeInSection delay={200} className="col-span-4 md:col-span-4 lg:col-span-4">
-            <Card className="h-full bg-charcoal/50 border-white/10">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-3">Decision Intelligence</h3>
-                <p>The explosion of data has paradoxically slowed decision-making processes at many enterprises. NOD platform processes vast datasets through its neural architecture to deliver faster, more accurate insights.</p>
-              </CardContent>
-            </Card>
-          </FadeInSection>
-          
-          <FadeInSection delay={300} className="col-span-4 md:col-span-4 lg:col-span-4">
-            <Card className="h-full bg-charcoal/50 border-white/10">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-3">Neural Networks</h3>
-                <p>NeuralArc has pioneered proprietary neural network architectures that bridge the gap between academic research and practical business applications, creating significant advantages for enterprise clients.</p>
-              </CardContent>
-            </Card>
-          </FadeInSection>
-          
-          <FadeInSection delay={400} className="col-span-4 md:col-span-8 lg:col-span-12 mt-12">
-            <ChartComponent
-              type="bar"
-              data={marketData}
-              title="Global AI Market Growth"
-              caption="Data source: Industry projections based on 33.83% CAGR"
-              className="w-full max-w-4xl mx-auto"
-            />
-          </FadeInSection>
-        </div>
-      </section>
-      
-      {/* Investment Opportunity */}
-      <section className="py-16 bg-charcoal/30">
+
+      {/* Products Section */}
+      <section id="products" className="py-16 bg-charcoal/30">
         <div className="grid-container">
           <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-center">Investment Opportunity – Growth Trajectory</h2>
-            
-            <div className="mt-8 max-w-3xl mx-auto">
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <span className="text-teal mr-2">•</span>
-                  <span>Revenue grows $<CountUp end={18} suffix=" M" className="text-teal" /> → $<CountUp end={240} suffix=" M" className="text-teal" /> (<CountUp end={90} suffix="%" className="text-teal" /> CAGR)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-teal mr-2">•</span>
-                  <span><CountUp end={75} className="text-teal" /> → <CountUp end={300} className="text-teal" /> enterprise clients</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-teal mr-2">•</span>
-                  <span>Client retention rate of <CountUp end={95} suffix="%" className="text-teal" /></span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-teal mr-2">•</span>
-                  <span>Strategic partnerships with <CountUp end={4} className="text-teal" /> of the Big <CountUp end={5} className="text-teal" /> consulting firms</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-teal mr-2">•</span>
-                  <span>Headcount growth from <CountUp end={25} className="text-teal" /> to <CountUp end={120} className="text-teal" /> FTEs</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-teal mr-2">•</span>
-                  <span><CountUp end={65} suffix="%" className="text-teal" /> gross margin → <CountUp end={82} suffix="%" className="text-teal" /> gross margin</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-teal mr-2">•</span>
-                  <span>Break-even projected by Q3 <CountUp end={2025} className="text-teal" /></span>
-                </li>
-              </ul>
-              
-              <div className="mt-8 text-center">
-                <Link to="/investment-opportunity">
-                  <Button className="bg-teal text-charcoal hover:bg-teal/90">View Full Investment Opportunity</Button>
-                </Link>
-              </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">The Three Pillars</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* ORB Card */}
+              <Card className="bg-charcoal/50 border-white/10">
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-bold mb-2">ORB</h3>
+                  <p className="text-teal italic mb-4">See Beyond. Act Ahead.</p>
+                  <p className="mb-4">Predicts competitor moves 30-120 days early via a neural decision matrix.</p>
+                  <p className="text-muted-foreground mb-2">For: Strategy, Product, C-Suite</p>
+                  <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">GA</span>
+                </CardContent>
+              </Card>
+
+              {/* NOD Card */}
+              <Card className="bg-charcoal/50 border-white/10">
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-bold mb-2">NOD</h3>
+                  <p className="text-teal italic mb-4">Decisions at the Speed of Thought.</p>
+                  <p className="mb-4">Ingests every data stream, surfaces ranked actions, closes the insight-to-action gap.</p>
+                  <p className="text-muted-foreground mb-2">For: Ops, Finance, Execs</p>
+                  <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">GA (v1.5)</span>
+                </CardContent>
+              </Card>
+
+              {/* Micro AI Suite Card */}
+              <Card className="bg-charcoal/50 border-white/10">
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-bold mb-2">Micro AI SaaS Suite</h3>
+                  <p className="text-teal italic mb-4">Solve a pain in minutes.</p>
+                  <p className="mb-4">Nine bite-sized AI utilities with shared auth & billing.</p>
+                  <p className="text-muted-foreground mb-2">For: Individuals → Teams → SMBs</p>
+                  <div className="space-x-2">
+                    <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">3 Live</span>
+                    <span className="inline-block bg-teal/10 text-teal px-2 py-1 rounded">3 Beta</span>
+                    <span className="inline-block bg-teal/5 text-teal px-2 py-1 rounded">3 Planned</span>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </FadeInSection>
         </div>
       </section>
-      
-      {/* CTA Section */}
-      <section className="py-16 bg-teal/10">
+
+      {/* Investment CTA */}
+      <section className="py-16">
         <div className="grid-container">
           <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business Intelligence?</h2>
-            <p className="max-w-3xl mx-auto mb-8 text-lg">
-              Schedule a personalized demo to see how NeuralArc's platforms can accelerate your decision-making and provide unprecedented competitive insights.
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Join the Journey</h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">
+              We're raising <span className="text-teal">US $ 500 K</span> via a Convertible SAFE (20% discount, US $ 12 M cap).
+              <br />Early backers get MFN protection and board-observer access.
             </p>
-            <Button asChild size="lg" className="bg-teal text-charcoal hover:bg-teal/90">
-              <Link to="/contact">Get Started</Link>
-            </Button>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button asChild className="bg-teal text-charcoal hover:bg-teal/90">
+                <a href="mailto:invest@neuralarc.ai">Request Data Room</a>
+              </Button>
+              <Button asChild variant="outline">
+                <Link to="/investment-opportunity">View Deal Terms →</Link>
+              </Button>
+            </div>
           </FadeInSection>
         </div>
       </section>
