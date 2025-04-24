@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -7,7 +8,6 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
@@ -37,8 +37,15 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-charcoal/90 backdrop-blur-sm border-b border-white/10">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center">
-          <Link to="/" className="text-2xl font-space font-bold text-teal hover:no-underline">
-            NeuralArc
+          <Link to="/" className="flex items-center gap-3 hover:no-underline">
+            <img 
+              src="/lovable-uploads/3cbb6750-3d48-45e8-b9ea-498f6527d80e.png" 
+              alt="NeuralArc Logo" 
+              className="h-7 w-auto"
+            />
+            <span className="text-2xl font-space font-bold text-teal">
+              NeuralArc <span className="text-offwhite/60">| Investor Portal</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
