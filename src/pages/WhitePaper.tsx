@@ -19,7 +19,7 @@ const WhitePaper = () => {
 
             {/* Executive Summary Section */}
             <section>
-              <SectionHeader title="Executive Summary" />
+              <SectionHeader number="01" title="Executive Summary" />
               <StyledCard>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <div className="prose prose-invert max-w-none">
@@ -46,7 +46,7 @@ const WhitePaper = () => {
 
             {/* Market Landscape Section */}
             <section>
-              <SectionHeader title="Market Landscape and Opportunity" />
+              <SectionHeader number="02" title="Market Landscape and Opportunity" />
               <StyledCard>
                 <div className="prose prose-invert max-w-none">
                   <p>
