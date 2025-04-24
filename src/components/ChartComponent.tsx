@@ -12,7 +12,11 @@ import {
   Legend,
   ChartType,
   ChartData,
-  ChartOptions
+  ChartOptions,
+  BarController,
+  LineController,
+  PieController,
+  DoughnutController
 } from 'chart.js';
 
 ChartJS.register(
@@ -21,6 +25,10 @@ ChartJS.register(
   PointElement,
   LineElement,
   BarElement,
+  BarController,
+  LineController,
+  PieController,
+  DoughnutController,
   Title,
   Tooltip,
   Legend
@@ -76,7 +84,7 @@ const ChartComponent = ({
           titleFont: {
             family: 'Space Grotesk, sans-serif',
             size: 14,
-            weight: 'bold' as 'bold' // Fix: Use a valid font weight value as type
+            weight: 'bold' as 'bold'
           },
           bodyFont: {
             family: 'Inter, sans-serif',
