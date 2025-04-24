@@ -1,12 +1,36 @@
 
 import { useEffect, useRef } from "react";
-import { Chart, ChartConfiguration, registerables } from 'chart.js';
+import { Chart, ChartConfiguration, ChartTypeRegistry } from 'chart.js';
+import { 
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  ArcElement,
+  RadialLinearScale,
+  Title,
+  Tooltip,
+  Legend 
+} from 'chart.js';
 
 // Register all necessary chart elements
-Chart.register(...registerables);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  ArcElement,
+  RadialLinearScale,
+  Title,
+  Tooltip,
+  Legend
+);
 
 interface ChartComponentProps {
-  type: 'bar' | 'line' | 'pie' | 'doughnut' | 'radar';
+  type: keyof ChartTypeRegistry;
   data: any;
   options?: any;
   className?: string;
@@ -98,7 +122,7 @@ const ChartComponent = ({
     // Create new chart
     const ctx = chartRef.current.getContext('2d');
     if (ctx) {
-      chartInstance.current = new Chart(ctx, {
+      chartInstance.current = new ChartJS(ctx, {
         type,
         data,
         options: mergedOptions
