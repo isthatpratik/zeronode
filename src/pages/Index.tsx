@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import FadeInSection from '@/components/FadeInSection';
 import CountUp from '@/components/CountUp';
 
@@ -34,42 +33,59 @@ const Index = () => {
             </div>
           </FadeInSection>
 
-          {/* Market Stats */}
+          {/* Market Stats - Converted from table to cards */}
           <div className="col-span-4 md:col-span-8 lg:col-span-12 mt-16">
             <FadeInSection>
-              <Card className="bg-charcoal/30 border-white/10">
-                <CardContent className="p-6">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead>Metric</TableHead>
-                        <TableHead>Today</TableHead>
-                        <TableHead>2034</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      <TableRow>
-                        <TableCell>Global AI Market</TableCell>
-                        <TableCell>$ <CountUp end={758} suffix=" B" /></TableCell>
-                        <TableCell>$ <CountUp end={3.68} suffix=" T" /></TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell>CI-Tools TAM</TableCell>
-                        <TableCell>$ <CountUp end={495} suffix=" M" /></TableCell>
-                        <TableCell>$ <CountUp end={1.12} suffix=" B" /></TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell>Analytics TAM</TableCell>
-                        <TableCell>$ <CountUp end={88} suffix=" B" /></TableCell>
-                        <TableCell>$ <CountUp end={483} suffix=" B" /></TableCell>
-                      </TableRow>
-                    </TableBody>
-                  </Table>
-                  <p className="mt-4 text-center text-muted-foreground">
-                    Neural Arc sits at the intersection of <strong>both fastest-growing AI segments</strong>: predictive competitive intelligence <strong>and</strong> decision-automation analytics—while monetising a third vector via viral Micro AI apps.
-                  </p>
-                </CardContent>
-              </Card>
+              <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Market Metrics</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Global AI Market Card */}
+                <Card className="bg-charcoal/30 border-white/10 overflow-hidden">
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-medium text-muted-foreground mb-2">Global AI Market</h3>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-lg">Today:</span>
+                      <span className="text-2xl font-bold text-teal">$ <CountUp end={758} suffix=" B" /></span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg">2034:</span>
+                      <span className="text-2xl font-bold text-teal">$ <CountUp end={3.68} suffix=" T" /></span>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* CI-Tools TAM Card */}
+                <Card className="bg-charcoal/30 border-white/10 overflow-hidden">
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-medium text-muted-foreground mb-2">CI-Tools TAM</h3>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-lg">Today:</span>
+                      <span className="text-2xl font-bold text-teal">$ <CountUp end={495} suffix=" M" /></span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg">2034:</span>
+                      <span className="text-2xl font-bold text-teal">$ <CountUp end={1.12} suffix=" B" /></span>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Analytics TAM Card */}
+                <Card className="bg-charcoal/30 border-white/10 overflow-hidden">
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-medium text-muted-foreground mb-2">Analytics TAM</h3>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-lg">Today:</span>
+                      <span className="text-2xl font-bold text-teal">$ <CountUp end={88} suffix=" B" /></span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg">2034:</span>
+                      <span className="text-2xl font-bold text-teal">$ <CountUp end={483} suffix=" B" /></span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+              <p className="mt-8 text-center text-muted-foreground max-w-3xl mx-auto">
+                Neural Arc sits at the intersection of <strong>both fastest-growing AI segments</strong>: predictive competitive intelligence <strong>and</strong> decision-automation analytics—while monetising a third vector via viral Micro AI apps.
+              </p>
             </FadeInSection>
           </div>
         </div>

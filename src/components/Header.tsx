@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import AIChatWidget from './AIChatWidget';
+import APIKeyManager from './APIKeyManager';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,13 +44,19 @@ const Header = () => {
                 </Link>
               ))}
             </div>
-            <Button asChild className="bg-teal text-charcoal hover:bg-teal/90">
-              <Link to="/contact">Get Demo</Link>
-            </Button>
+            <div className="flex items-center">
+              <Button asChild className="bg-teal text-charcoal hover:bg-teal/90">
+                <Link to="/contact">Get Demo</Link>
+              </Button>
+              <AIChatWidget />
+              <APIKeyManager />
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden flex items-center">
+            <AIChatWidget />
+            <APIKeyManager />
             <Button variant="ghost" size="icon" onClick={toggleMenu} aria-label="Toggle Menu">
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
