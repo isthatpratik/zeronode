@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -15,7 +16,7 @@ const Index = () => {
           <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 text-center mb-12">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
               Neural Intelligence for{' '}
-              <span className="underline decoration-teal"><br>Business Inteligence</span></br>
+              <span className="underline decoration-teal">Business Intelligence</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Neural Arc gives every organisation—startup to enterprise—the power to{' '}
@@ -127,7 +128,7 @@ const Index = () => {
           <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Join the Journey</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              We're raising <span className="text-teal">US $ 500,000 K</span> 
+              We're raising <span className="text-teal">US $ 500,000</span> 
               <br /> via a Convertible SAFE (20% discount, US $ 12.5M cap)
             </p>
             <div className="flex flex-wrap justify-center gap-4">
