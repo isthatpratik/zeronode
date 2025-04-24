@@ -15,13 +15,7 @@ const HomeChat = () => {
   const [messages, setMessages] = useState<Message[]>([
     { 
       role: 'assistant', 
-      content: '👋 Welcome to Neural Arc Investment Opportunity! 🚀\n\n' +
-        'Explore the future of AI for SMBs. Ask me about:\n\n' +
-        '• Our revolutionary platforms (ORB & NOD)\n\n' +
-        '• AI market potential\n\n' +
-        '• Investment details\n\n' +
-        '• Our unique micro-SaaS suite\n\n' +
-        'What would you like to know about this groundbreaking opportunity?'
+      content: '🚀 AI Revolution Awaits! \n\nDiscover Neural Arc\'s groundbreaking platforms. How can I help you today?'
     }
   ]);
   const [input, setInput] = useState('');

@@ -143,7 +143,7 @@ const Index = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild className="bg-teal text-charcoal hover:bg-teal/90">
-                <a href="mailto:invest@neuralarc.ai">Request Data Room</a>
+                <a href="mailto:invest@neuralarc.ai">I'm Interested! Let's Connect</a>
               </Button>
               <Button asChild variant="outline">
                 <Link to="/investment-opportunity">View Deal Terms →</Link>
