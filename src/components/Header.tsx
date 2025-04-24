@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -43,9 +42,14 @@ const Header = () => {
               alt="NeuralArc Logo" 
               className="h-7 w-auto"
             />
-            <span className="text-2xl font-space font-bold text-teal">
-              NeuralArc <span className="text-offwhite/60">| Investor Portal</span>
-            </span>
+            <div className="flex flex-col md:flex-row md:items-baseline md:gap-2">
+              <span className="text-2xl font-space font-bold text-teal">
+                NeuralArc
+              </span>
+              <span className="text-sm font-space text-offwhite/60 font-normal">
+                Investor Portal
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
