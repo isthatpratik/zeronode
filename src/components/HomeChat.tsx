@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Send } from 'lucide-react';
+import { Send, Bulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { chatWithGemini } from '@/services/apiService';
@@ -16,7 +16,7 @@ const HomeChat = () => {
   const [messages, setMessages] = useState<Message[]>([
     { 
       role: 'assistant', 
-      content: 'Welcome to Neural Arc\n\nAsk any questions regarding this investment opportunity' 
+      content: '👋 Welcome to Neural Arc 🚀\n\nUnlock the potential: Ask your burning questions about our groundbreaking investment opportunity!' 
     }
   ]);
   const [input, setInput] = useState('');

@@ -39,7 +39,7 @@ const Index = () => {
       </section>
 
       {/* Chat Section */}
-      <section className="py-16 bg-gradient-to-b from-charcoal/0 to-charcoal/30">
+      <section className="py-8 bg-gradient-to-b from-charcoal/0 to-charcoal/30">
         <div className="grid-container">
           <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12">
             <HomeChat />
