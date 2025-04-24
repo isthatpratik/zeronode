@@ -35,6 +35,7 @@ const Login = () => {
     }
     // TODO: Add actual login logic
     console.log('Login attempt with:', { email, password, captcha });
+    navigate('/'); // Navigate to home page after successful login
   };
 
   return (
