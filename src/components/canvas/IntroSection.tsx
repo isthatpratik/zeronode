@@ -30,6 +30,16 @@ const IntroSection = () => {
             only beginning to tap into AI, despite clear evidence of its value – 91% of SMBs using AI report 
             increased revenue.
           </p>
+          <p className="text-muted-foreground mb-6">
+            In fact, while over three-quarters of small businesses have adopted AI in some capacity, full adoption 
+            among medium-sized firms remains around 20-21%. This gap between interest and implementation signals 
+            a major opportunity: delivering enterprise-grade AI capabilities to the underserved SMB segment.
+          </p>
+          <p className="text-muted-foreground">
+            NeuralArc squarely targets this white-space in the market. The company's offerings – the ORB platform 
+            for competitive intelligence, the NOD platform for decision acceleration, and a suite of Micro AI SaaS 
+            tools – are designed to "democratize" advanced neural intelligence for businesses of all sizes.
+          </p>
         </Card>
       </FadeInSection>
     </>

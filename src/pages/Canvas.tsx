@@ -3,6 +3,11 @@ import React from 'react';
 import IntroSection from '@/components/canvas/IntroSection';
 import VisualizationSection from '@/components/canvas/VisualizationSection';
 import MarketSection from '@/components/canvas/MarketSection';
+import DecisionIntelSection from '@/components/canvas/DecisionIntelSection';
+import MicroSaasSection from '@/components/canvas/MicroSaasSection';
+import WhitespaceSection from '@/components/canvas/WhitespaceSection';
+import StrategicAdvantageSection from '@/components/canvas/StrategicAdvantageSection';
+import SummarySection from '@/components/canvas/SummarySection';
 
 const Canvas = () => {
   return (
@@ -11,6 +16,11 @@ const Canvas = () => {
         <IntroSection />
         <VisualizationSection />
         <MarketSection />
+        <DecisionIntelSection />
+        <MicroSaasSection />
+        <WhitespaceSection />
+        <StrategicAdvantageSection />
+        <SummarySection />
       </div>
     </main>
   );
