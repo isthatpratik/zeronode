@@ -1,8 +1,9 @@
 
+import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import FadeInSection from "@/components/FadeInSection";
 
-const MicroSuite = () => {
+const MicroSuite: React.FC = () => {
   const liveApps = [
     {
       name: "Rovyk",
@@ -72,7 +73,7 @@ const MicroSuite = () => {
   ];
 
   return (
-    <main className="pt-24 pb-16">
+    <div className="pt-24 pb-16">
       <div className="grid-container">
         <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -140,15 +141,15 @@ const MicroSuite = () => {
           <Card className="bg-charcoal/30 border-white/10">
             <CardContent className="p-6">
               <p className="text-white/80">
-                Each pipeline app re-uses Neural Arc's multi-tenant "micro-app fabric" 
+                Each pipeline app re-uses Neural Arc&apos;s multi-tenant &quot;micro-app fabric&quot; 
                 (shared auth, billing, and model-orchestration), slashing marginal launch 
-                cost to < US $ 40 k per app.
+                cost to &lt; US $ 40 k per app.
               </p>
             </CardContent>
           </Card>
         </FadeInSection>
       </div>
-    </main>
+    </div>
   );
 };
 
