@@ -23,6 +23,7 @@ const Header = () => {
     { path: '/orb-platform', label: 'ORB Platform' },
     { path: '/nod-platform', label: 'NOD Platform' },
     { path: '/platforms/micro-saas', label: 'Micro SaaS Suite' },
+    { path: '/canvas', label: 'Canvas' },
   ];
 
   const investmentRoutes = [

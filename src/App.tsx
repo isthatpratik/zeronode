@@ -13,6 +13,7 @@ import Footer from '@/components/Footer';
 import MicroSaas from '@/pages/platforms/MicroSaas';
 import MarketOverview from '@/pages/MarketOverview';
 import FutureOutlook from '@/pages/FutureOutlook';
+import Canvas from '@/pages/Canvas';
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/future-outlook" element={<FutureOutlook />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/platforms/micro-saas" element={<MicroSaas />} />
+          <Route path="/canvas" element={<Canvas />} />
         </Routes>
         <Footer />
       </div>
