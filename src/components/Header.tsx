@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -89,7 +88,13 @@ const Header = () => {
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center gap-4">
+              <Link 
+                to="/login" 
+                className="text-offwhite hover:text-teal transition duration-200 text-sm"
+              >
+                Sign In
+              </Link>
               <APIKeyManager />
             </div>
           </nav>
