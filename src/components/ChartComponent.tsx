@@ -7,6 +7,11 @@ import {
   PointElement,
   LineElement,
   BarElement,
+  BarController,
+  LineController,
+  PieController, 
+  DoughnutController,
+  RadarController,
   ArcElement,
   RadialLinearScale,
   Title,
@@ -17,7 +22,7 @@ import {
   ChartOptions
 } from 'chart.js';
 
-// Register all necessary chart elements
+// Register all necessary chart elements AND controllers
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -28,7 +33,13 @@ ChartJS.register(
   RadialLinearScale,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  // Register controllers explicitly
+  BarController,
+  LineController, 
+  PieController,
+  DoughnutController,
+  RadarController
 );
 
 interface ChartComponentProps {
