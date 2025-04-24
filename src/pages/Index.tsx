@@ -84,7 +84,7 @@ const Index = () => {
               <Card className="bg-charcoal/50 border-white/10">
                 <CardContent className="p-6">
                   <h3 className="text-2xl font-bold mb-2">ORB</h3>
-                  <p className="text-teal italic mb-4">See Beyond. Act Ahead.</p>
+                  <p className="text-teal italic mb-4">Outlast. Reimagine. Build.</p>
                   <p className="mb-4">Predicts competitor moves 30-120 days early via a neural decision matrix.</p>
                   <p className="text-muted-foreground mb-2">For: Strategy, Product, C-Suite</p>
                   <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">GA</span>
@@ -95,7 +95,7 @@ const Index = () => {
               <Card className="bg-charcoal/50 border-white/10">
                 <CardContent className="p-6">
                   <h3 className="text-2xl font-bold mb-2">NOD</h3>
-                  <p className="text-teal italic mb-4">Decisions at the Speed of Thought.</p>
+                  <p className="text-teal italic mb-4">Navigate. Optimize. Disrupt.</p>
                   <p className="mb-4">Ingests every data stream, surfaces ranked actions, closes the insight-to-action gap.</p>
                   <p className="text-muted-foreground mb-2">For: Ops, Finance, Execs</p>
                   <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">GA (v1.5)</span>
@@ -127,8 +127,8 @@ const Index = () => {
           <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Join the Journey</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              We're raising <span className="text-teal">US $ 500 K</span> via a Convertible SAFE (20% discount, US $ 12 M cap).
-              <br />Early backers get MFN protection and board-observer access.
+              We're raising <span className="text-teal">US $ 500 K</span> via a Convertible SAFE (20% discount, US $ 12.5M cap).
+              <br />
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild className="bg-teal text-charcoal hover:bg-teal/90">
