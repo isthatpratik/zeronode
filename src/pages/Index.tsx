@@ -104,7 +104,7 @@ const Index = () => {
                   <p className="text-teal italic mb-4">Outlast. Reimagine. Build.</p>
                   <p className="mb-4">Predicts competitor moves 30-120 days early via a neural decision matrix.</p>
                   <p className="text-muted-foreground mb-2">For: Strategy, Product, C-Suite</p>
-                  <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">GA</span>
+                  <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">POC Phase</span>
                 </CardContent>
               </Card>
 
@@ -115,7 +115,7 @@ const Index = () => {
                   <p className="text-teal italic mb-4">Navigate. Optimize. Disrupt.</p>
                   <p className="mb-4">Ingests every data stream, surfaces ranked actions, closes the insight-to-action gap.</p>
                   <p className="text-muted-foreground mb-2">For: Ops, Finance, Execs</p>
-                  <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">GA (v1.5)</span>
+                  <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">Prototype</span>
                 </CardContent>
               </Card>
 
@@ -127,9 +127,9 @@ const Index = () => {
                   <p className="mb-4">Nine bite-sized AI utilities with shared auth & billing.</p>
                   <p className="text-muted-foreground mb-2">For: Individuals → Teams → SMBs</p>
                   <div className="space-x-2">
-                    <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">3 Live</span>
-                    <span className="inline-block bg-teal/10 text-teal px-2 py-1 rounded">3 Beta</span>
-                    <span className="inline-block bg-teal/5 text-teal px-2 py-1 rounded">3 Planned</span>
+                    <span className="inline-block bg-teal/20 text-teal px-2 py-1 rounded">3 Beta</span>
+                    <span className="inline-block bg-teal/10 text-teal px-2 py-1 rounded">2 Coding</span>
+                    <span className="inline-block bg-teal/5 text-teal px-2 py-1 rounded">4 Planned</span>
                   </div>
                 </CardContent>
               </Card>
