@@ -16,7 +16,7 @@ const HomeChat = () => {
   const [messages, setMessages] = useState<Message[]>([
     { 
       role: 'assistant', 
-      content: '### Welcome to Neural Arc! 👋\n\nI can help you with information about:\n\n- Our innovative AI products\n- Our investment opportunity\n- Market statistics\n\nHow can I assist you today?' 
+      content: 'Welcome to Neural Arc\n\nAsk any questions regarding this investment opportunity' 
     }
   ]);
   const [input, setInput] = useState('');
