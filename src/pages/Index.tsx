@@ -15,7 +15,7 @@ const Index = () => {
           <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 text-center mb-12">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
               Neural Intelligence for{' '}
-              <span className="underline decoration-teal">Business Evolution</span>
+              <span className="underline decoration-teal">Business Inteligence</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Neural Arc gives every organisation—startup to enterprise—the power to{' '}
