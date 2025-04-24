@@ -1,11 +1,11 @@
-
-import { useState } from 'react';
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import FadeInSection from "@/components/FadeInSection";
 import ChartComponent from "@/components/ChartComponent";
 import CountUp from "@/components/CountUp";
-import { Card, CardContent } from "@/components/ui/card";
-import { useMarketMetricsVerifier } from '@/components/MarketMetricsVerifier';
+import { StyledCard } from "@/components/ui/styled-card";
+import { SectionHeader } from "@/components/ui/section-header";
+import { useMarketMetricsVerifier } from "@/components/MarketMetricsVerifier";
 
 // Updated chart data based on Investment Opportunity page
 const revenueProjectionsData = {
@@ -76,36 +76,37 @@ const Visualizations = () => {
     <main className="pt-24 pb-16">
       <div className="grid-container">
         <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-12">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">Interactive Visuals</h1>
+          <StyledCard highlight className="text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">Interactive Visuals</h1>
+            <p className="text-xl text-muted-foreground mt-4">
+              Explore Neural Arc&apos;s metrics and projections through interactive charts and visualizations.
+            </p>
+          </StyledCard>
         </FadeInSection>
         
         <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-12">
-          <div className="max-w-4xl mx-auto">
-            <Card className="bg-charcoal/30 border-white/10">
-              <CardContent className="p-6">
-                <h2 className="text-xl font-semibold mb-4">Market Metrics</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {metrics.map((metric, index) => (
-                    <div key={index} className="space-y-2">
-                      <h3 className="text-lg font-medium text-muted-foreground">{metric.name}</h3>
-                      <div className="flex justify-between items-center">
-                        <span>Today:</span>
-                        <span className="text-xl font-bold text-teal">$ <CountUp end={metric.current} suffix={metric.suffix} /></span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span>2034:</span>
-                        <span className="text-xl font-bold text-teal">$ <CountUp end={metric.future} suffix={metric.suffix} /></span>
-                      </div>
-                    </div>
-                  ))}
+          <StyledCard>
+            <SectionHeader number="1" title="Market Overview" className="mb-8" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {metrics.map((metric, index) => (
+                <div key={index} className="space-y-2">
+                  <h3 className="text-lg font-medium text-teal">{metric.name}</h3>
+                  <div className="flex justify-between items-center">
+                    <span>Today:</span>
+                    <span className="text-xl font-bold">$ <CountUp end={metric.current} suffix={metric.suffix} /></span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span>2034:</span>
+                    <span className="text-xl font-bold">$ <CountUp end={metric.future} suffix={metric.suffix} /></span>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+              ))}
+            </div>
+          </StyledCard>
         </FadeInSection>
         
         <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12">
-          <div className="max-w-4xl mx-auto">
+          <StyledCard>
             <Tabs defaultValue="growth" className="mb-12">
               <TabsList className="grid grid-cols-3 mb-8">
                 <TabsTrigger value="growth">Growth Metrics</TabsTrigger>
@@ -114,8 +115,7 @@ const Visualizations = () => {
               </TabsList>
               
               <TabsContent value="growth" className="space-y-8">
-                <h2 className="text-2xl font-bold mb-6">Growth Trajectory</h2>
-                
+                <SectionHeader number="2" title="Growth Trajectory" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <FadeInSection delay={100}>
                     <ChartComponent 
@@ -138,8 +138,7 @@ const Visualizations = () => {
               </TabsContent>
               
               <TabsContent value="financial" className="space-y-8">
-                <h2 className="text-2xl font-bold mb-6">Financial Metrics</h2>
-                
+                <SectionHeader number="3" title="Financial Metrics" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <FadeInSection delay={100}>
                     <ChartComponent 
@@ -160,7 +159,7 @@ const Visualizations = () => {
                   </FadeInSection>
                   
                   <FadeInSection delay={300}>
-                    <Card className="bg-charcoal/30 border-white/10 col-span-1 md:col-span-2">
+                    <StyledCard className="col-span-1 md:col-span-2">
                       <CardContent className="p-6">
                         <h3 className="text-xl font-semibold mb-4">Key Financial Indicators</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -203,14 +202,13 @@ const Visualizations = () => {
                           </ul>
                         </div>
                       </CardContent>
-                    </Card>
+                    </StyledCard>
                   </FadeInSection>
                 </div>
               </TabsContent>
               
               <TabsContent value="unit" className="space-y-8">
-                <h2 className="text-2xl font-bold mb-6">Unit Economics (2027 Steady-State)</h2>
-                
+                <SectionHeader number="4" title="Unit Economics (2027 Steady-State)" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <FadeInSection delay={100}>
                     <ChartComponent 
@@ -222,7 +220,7 @@ const Visualizations = () => {
                   </FadeInSection>
                   
                   <FadeInSection delay={200}>
-                    <Card className="bg-charcoal/30 border-white/10">
+                    <StyledCard>
                       <CardContent className="p-6">
                         <h3 className="text-xl font-semibold mb-4">Performance Metrics</h3>
                         <ul className="space-y-4">
@@ -252,12 +250,12 @@ const Visualizations = () => {
                           </li>
                         </ul>
                       </CardContent>
-                    </Card>
+                    </StyledCard>
                   </FadeInSection>
                 </div>
               </TabsContent>
             </Tabs>
-          </div>
+          </StyledCard>
         </FadeInSection>
       </div>
     </main>
