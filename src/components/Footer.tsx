@@ -19,6 +19,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/orb-platform" className="text-sm">ORB Platform</Link></li>
               <li><Link to="/nod-platform" className="text-sm">NOD Platform</Link></li>
+              <li><Link to="/microsuite" className="text-sm">Micro SaaS Suite</Link></li>
             </ul>
           </div>
           <div>
