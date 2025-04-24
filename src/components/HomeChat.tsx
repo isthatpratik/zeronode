@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -15,9 +16,13 @@ const HomeChat = () => {
   const [messages, setMessages] = useState<Message[]>([
     { 
       role: 'assistant', 
-      content: '👋 Welcome to Neural Arc 🚀\n\n' +
-        'Founded by Aniket Tapre, a serial entrepreneur with 30+ years of tech experience and multiple successful exits across industries.\n\n' +
-        'Ask me about our groundbreaking investment opportunity and how we\'re revolutionizing AI!'
+      content: '👋 Welcome to Neural Arc Investment Opportunity! 🚀\n\n' +
+        'Explore the future of AI for SMBs. Ask me about:\n\n' +
+        '• Our revolutionary platforms (ORB & NOD)\n' +
+        '• AI market potential\n' +
+        '• Investment details\n' +
+        '• Our unique micro-SaaS suite\n\n' +
+        'What would you like to know about this groundbreaking opportunity?'
     }
   ]);
   const [input, setInput] = useState('');
@@ -32,6 +37,13 @@ const HomeChat = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  const handleFounderQuery = (userInput: string) => {
+    const founderKeywords = ['founder', 'aniket', 'tapre', 'who started'];
+    return founderKeywords.some(keyword => 
+      userInput.toLowerCase().includes(keyword)
+    );
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,7 +60,13 @@ const HomeChat = () => {
         throw new Error('Please set your DeepSeek API key in settings first');
       }
 
-      const response = await chatWithGemini(input, messages);
+      let response;
+      if (handleFounderQuery(input)) {
+        response = "Founded by Aniket Tapre, a serial entrepreneur with 30+ years of tech experience and multiple successful exits across industries.";
+      } else {
+        response = await chatWithGemini(input, messages);
+      }
+
       setMessages(prev => [...prev, { role: 'assistant', content: response }]);
     } catch (error: any) {
       console.error('Chat error:', error);
@@ -100,7 +118,7 @@ const HomeChat = () => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask about Neural Arc..."
+          placeholder="Ask about Neural Arc's investment opportunity..."
           className="flex-1 bg-charcoal/20 text-foreground rounded-md px-3 py-2 outline-none focus:ring-1 focus:ring-teal"
           disabled={isLoading}
         />
