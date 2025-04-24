@@ -14,7 +14,7 @@ const OrbPlatform = () => {
         </FadeInSection>
         
         <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12">
-          <div className="max-w-4xl">
+          <div className="max-w-5xl">
             <h2 className="text-2xl font-bold mb-4">Traditional Competitive Intelligence Limitations</h2>
             <p className="mb-6">
               Traditional competitive intelligence approaches suffer from several critical limitations that diminish their effectiveness in today's rapidly evolving business environment:
@@ -255,13 +255,6 @@ const OrbPlatform = () => {
                   </CardContent>
                 </Card>
               </FadeInSection>
-            </div>
-            
-            <div className="mt-12 bg-charcoal/30 border-white/10 p-6 rounded-lg">
-              <blockquote className="mb-4 text-lg italic">
-                "NeuralArc's ORB platform has transformed how we approach competitive intelligence. The predictive capabilities have given us early warnings about competitor moves that would have blindsided us in the past. It's like having a crystal ball for our industry."
-              </blockquote>
-              <p className="font-semibold">— Chief Strategy Officer, Fortune 100 Technology Company</p>
             </div>
           </div>
         </FadeInSection>

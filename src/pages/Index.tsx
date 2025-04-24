@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -16,7 +15,7 @@ const Index = () => {
       <section className="py-8 md:py-12">
         <div className="grid-container">
           <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 text-center mb-12">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">
               Neural Intelligence for{' '}
               <span className="underline decoration-teal">Business Intelligence</span>
             </h1>
@@ -30,8 +29,11 @@ const Index = () => {
               <Button asChild className="bg-teal text-charcoal hover:bg-teal/90">
                 <Link to="/white-paper">View White Paper</Link>
               </Button>
-              <Button asChild variant="outline">
-                <a href="#products">Explore the Stack ↓</a>
+              <Button asChild variant="outline" className="relative group overflow-hidden">
+                <a href="#products">
+                  <span className="relative z-10">Explore the Stack ↓</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#00ff9d] to-[#00b8ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </a>
               </Button>
             </div>
           </FadeInSection>
@@ -143,10 +145,13 @@ const Index = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild className="bg-teal text-charcoal hover:bg-teal/90">
-                <a href="mailto:invest@neuralarc.ai">I'm Interested! Let's Connect</a>
+                <a href="mailto:aniket.tapre@neuralarc.ai">I'm Interested! Let's Connect</a>
               </Button>
-              <Button asChild variant="outline">
-                <Link to="/investment-opportunity">View Deal Terms →</Link>
+              <Button asChild variant="outline" className="relative group overflow-hidden">
+                <Link to="/investment-opportunity">
+                  <span className="relative z-10">View Deal Terms →</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#00ff9d] to-[#00b8ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </Link>
               </Button>
             </div>
           </FadeInSection>

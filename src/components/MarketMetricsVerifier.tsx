@@ -1,7 +1,6 @@
-
 import { useEffect, useState } from 'react';
 import { useToast } from "@/hooks/use-toast";
-import { chatWithGemini } from '@/services/apiService';
+import { handleChatRequest } from '@/api/chat';
 
 export interface MarketMetric {
   name: string;
@@ -21,18 +20,7 @@ export const useMarketMetricsVerifier = () => {
   useEffect(() => {
     const verifyMetrics = async () => {
       try {
-        const apiKey = localStorage.getItem('deepseek_api_key');
-        if (!apiKey) {
-          console.log('No DeepSeek API key found. Using default metrics.');
-          return;
-        }
-
-        toast({
-          title: "Verifying Market Metrics",
-          description: "Checking the accuracy of displayed metrics...",
-        });
-
-        const response = await chatWithGemini(
+        const response = await handleChatRequest(
           "Please verify these market metrics and respond with updated numbers if needed. Format your response as JSON with the same structure: " +
           JSON.stringify(metrics),
           []
@@ -59,35 +47,15 @@ export const useMarketMetricsVerifier = () => {
               toast({
                 title: "Market Metrics Updated",
                 description: "The displayed metrics have been refreshed with the latest data.",
-              });
-            } else if (response.includes('verified') || response.includes('accurate')) {
-              toast({
-                title: "Market Metrics Verified",
-                description: "The displayed metrics are up to date.",
+                duration: 3000
               });
             }
-          } else if (response.includes('verified') || response.includes('accurate')) {
-            toast({
-              title: "Market Metrics Verified",
-              description: "The displayed metrics are up to date.",
-            });
           }
         } catch (parseError) {
           console.error('Error parsing metrics JSON:', parseError);
-          if (response.includes('verified') || response.includes('accurate')) {
-            toast({
-              title: "Market Metrics Verified",
-              description: "The displayed metrics are up to date.",
-            });
-          }
         }
       } catch (error) {
         console.error('Error verifying metrics:', error);
-        toast({
-          title: "Verification Error",
-          description: "Unable to verify metrics. Using stored values.",
-          variant: "destructive",
-        });
       }
     };
 

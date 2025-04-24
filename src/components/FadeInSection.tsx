@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -15,7 +14,8 @@ const FadeInSection = ({
 }: FadeInSectionProps) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.3,
+    rootMargin: '100px'
   });
 
   const sectionRef = useRef<HTMLDivElement>(null);

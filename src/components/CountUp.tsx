@@ -1,4 +1,3 @@
-
 import { useEffect, useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -20,7 +19,11 @@ const CountUp = ({
   className = "",
 }: CountUpProps) => {
   const [value, setValue] = useState(0);
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+  const { ref, inView } = useInView({ 
+    triggerOnce: true, 
+    threshold: 0.5,
+    rootMargin: '50px'
+  });
   const startTimeRef = useRef<number | null>(null);
   const frameRef = useRef<number | null>(null);
 

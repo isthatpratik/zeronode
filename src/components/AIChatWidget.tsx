@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -45,12 +44,6 @@ const AIChatWidget = () => {
     setIsLoading(true);
 
     try {
-      // Check if API key exists
-      const apiKey = localStorage.getItem('deepseek_api_key');
-      if (!apiKey) {
-        throw new Error('Please set your DeepSeek API key in settings first');
-      }
-
       // Get response from DeepSeek
       const response = await chatWithGemini(input, messages);
       

@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
@@ -18,17 +17,17 @@ const MicroSuite = () => {
           <TableRow>
             <TableCell>Rovyk</TableCell>
             <TableCell>Unified chat & prompt lab for GPT-4o, Claude-3, Gemini, Mistral</TableCell>
-            <TableCell>Live</TableCell>
+            <TableCell>Beta</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>LawBit.ai</TableCell>
             <TableCell>AI contract drafting & clause-risk analysis</TableCell>
-            <TableCell>Live</TableCell>
+            <TableCell>Beta</TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Compliance AI</TableCell>
+            <TableCell>Beacon</TableCell>
             <TableCell>Instant gap-scan against HIPAA, GDPR, ISO-27001</TableCell>
-            <TableCell>Live</TableCell>
+            <TableCell>Upcoming</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Kashew</TableCell>
@@ -46,7 +45,7 @@ const MicroSuite = () => {
             <TableCell>In development (Beta H2 2025)</TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>PatentPal</TableCell>
+            <TableCell>Radar</TableCell>
             <TableCell>End-to-end patent filing assistant</TableCell>
             <TableCell>Planned (H1 2026)</TableCell>
           </TableRow>

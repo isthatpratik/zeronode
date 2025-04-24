@@ -39,7 +39,7 @@ const MarketOverview = () => {
         </FadeInSection>
         
         <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-16">
-          <div className="max-w-4xl">
+          <div className="mx-auto max-w-4xl">
             <h2 className="text-2xl font-bold mb-4">Artificial Intelligence Market</h2>
             <p className="mb-6">
               The global artificial intelligence market is experiencing unprecedented growth, projected to expand from $328.34 billion in 2021 to $1,394.30 billion by 2029, representing a compound annual growth rate (CAGR) of 20.1%. This growth is driven by increasing adoption across industries, advancements in deep learning technologies, and the growing recognition of AI's transformative potential in enterprise operations.

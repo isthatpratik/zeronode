@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import Index from '@/pages/Index';
 import Visualizations from '@/pages/Visualizations';
 import ExecutiveSummary from '@/pages/ExecutiveSummary';
@@ -16,29 +15,92 @@ import FutureOutlook from '@/pages/FutureOutlook';
 import Canvas from '@/pages/Canvas';
 import WhitePaper from '@/pages/WhitePaper';
 import Login from '@/pages/Login';
+import ScrollToTop from '@/components/ScrollToTop';
+import { AuthProvider, useAuth } from '@/contexts/AuthContext';
+import ProtectedRoute from '@/components/ProtectedRoute';
 
 const AppContent = () => {
   const location = useLocation();
-  const isLoginPage = location.pathname === '/login' || location.pathname === '/';
+  const { user, loading } = useAuth();
+  const isLoginPage = location.pathname === '/login';
+
+  // Redirect authenticated users from login page to home
+  if (!loading && user && isLoginPage) {
+    return <Navigate to="/home" replace />;
+  }
+
+  // Show loading state while checking authentication
+  if (loading) {
+    return <div>Loading...</div>; // You might want to replace this with a proper loading component
+  }
 
   return (
     <div className="min-h-screen bg-charcoal">
+      <ScrollToTop />
       {!isLoginPage && <Header />}
       <Routes>
-        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Index />} />
-        <Route path="/visualizations" element={<Visualizations />} />
-        <Route path="/executive-summary" element={<ExecutiveSummary />} />
-        <Route path="/orb-platform" element={<OrbPlatform />} />
-        <Route path="/nod-platform" element={<NodPlatform />} />
-        <Route path="/investment-opportunity" element={<InvestmentOpportunity />} />
-        <Route path="/market-overview" element={<MarketOverview />} />
-        <Route path="/future-outlook" element={<FutureOutlook />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/platforms/micro-saas" element={<MicroSaas />} />
-        <Route path="/canvas" element={<Canvas />} />
-        <Route path="/white-paper" element={<WhitePaper />} />
+        <Route path="/" element={<Navigate to={user ? "/home" : "/login"} replace />} />
+        <Route path="/home" element={
+          <ProtectedRoute>
+            <Index />
+          </ProtectedRoute>
+        } />
+        <Route path="/visualizations" element={
+          <ProtectedRoute>
+            <Visualizations />
+          </ProtectedRoute>
+        } />
+        <Route path="/executive-summary" element={
+          <ProtectedRoute>
+            <ExecutiveSummary />
+          </ProtectedRoute>
+        } />
+        <Route path="/orb-platform" element={
+          <ProtectedRoute>
+            <OrbPlatform />
+          </ProtectedRoute>
+        } />
+        <Route path="/nod-platform" element={
+          <ProtectedRoute>
+            <NodPlatform />
+          </ProtectedRoute>
+        } />
+        <Route path="/investment-opportunity" element={
+          <ProtectedRoute>
+            <InvestmentOpportunity />
+          </ProtectedRoute>
+        } />
+        <Route path="/market-overview" element={
+          <ProtectedRoute>
+            <MarketOverview />
+          </ProtectedRoute>
+        } />
+        <Route path="/future-outlook" element={
+          <ProtectedRoute>
+            <FutureOutlook />
+          </ProtectedRoute>
+        } />
+        <Route path="/contact" element={
+          <ProtectedRoute>
+            <Contact />
+          </ProtectedRoute>
+        } />
+        <Route path="/platforms/micro-saas" element={
+          <ProtectedRoute>
+            <MicroSaas />
+          </ProtectedRoute>
+        } />
+        <Route path="/canvas" element={
+          <ProtectedRoute>
+            <Canvas />
+          </ProtectedRoute>
+        } />
+        <Route path="/white-paper" element={
+          <ProtectedRoute>
+            <WhitePaper />
+          </ProtectedRoute>
+        } />
       </Routes>
       {!isLoginPage && <Footer />}
     </div>
@@ -48,7 +110,9 @@ const AppContent = () => {
 const App = () => {
   return (
     <Router>
-      <AppContent />
+      <AuthProvider>
+        <AppContent />
+      </AuthProvider>
     </Router>
   );
 };

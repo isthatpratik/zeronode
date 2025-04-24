@@ -3,13 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Mail, Lock, Key } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
+import { useToast } from '@/hooks/use-toast';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [captcha, setCaptcha] = useState('');
   const [captchaCode, setCaptchaCode] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { signIn } = useAuth();
+  const { toast } = useToast();
 
   // Generate captcha on component mount
   React.useEffect(() => {
@@ -25,17 +30,36 @@ const Login = () => {
     setCaptchaCode(result);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (captcha !== captchaCode) {
-      alert('Invalid captcha code');
+      toast({
+        title: "Invalid Captcha",
+        description: "Please enter the correct captcha code",
+        variant: "destructive",
+      });
       generateCaptcha();
       setCaptcha('');
       return;
     }
-    // TODO: Add actual login logic
-    console.log('Login attempt with:', { email, password, captcha });
-    navigate('/home'); // Navigate to home page after successful login
+
+    try {
+      setIsLoading(true);
+      await signIn(email, password);
+      // Navigation will be handled by the AuthProvider when the user state changes
+    } catch (error: any) {
+      console.error('Login error:', error);
+      toast({
+        title: "Login Failed",
+        description: error.message || "Invalid email or password",
+        variant: "destructive",
+      });
+      generateCaptcha();
+      setCaptcha('');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -45,11 +69,8 @@ const Login = () => {
           <img 
             src="/lovable-uploads/3cbb6750-3d48-45e8-b9ea-498f6527d80e.png" 
             alt="NeuralArc Logo" 
-            className="h-12 mx-auto mb-4"
+            className="h-10 mx-auto mb-4"
           />
-          <h1 className="text-2xl font-space font-bold text-teal mb-1">
-            NeuralArc
-          </h1>
         </div>
 
         <div className="bg-charcoal/30 backdrop-blur-sm border border-white/10 rounded-lg p-6 shadow-xl">
@@ -72,6 +93,7 @@ const Login = () => {
                   placeholder="Enter your email"
                   className="pl-10"
                   required
+                  disabled={isLoading}
                 />
               </div>
             </div>
@@ -90,6 +112,7 @@ const Login = () => {
                   placeholder="Enter your password"
                   className="pl-10"
                   required
+                  disabled={isLoading}
                 />
               </div>
             </div>
@@ -113,19 +136,21 @@ const Login = () => {
                   placeholder="Enter the code above"
                   className="pl-10"
                   required
+                  disabled={isLoading}
                 />
               </div>
               <button
                 type="button"
                 onClick={generateCaptcha}
                 className="text-xs text-teal hover:underline mt-1"
+                disabled={isLoading}
               >
                 Refresh Captcha
               </button>
             </div>
 
-            <Button type="submit" className="w-full">
-              Sign In
+            <Button type="submit" className="w-full" disabled={isLoading}>
+              {isLoading ? "Signing in..." : "Sign In"}
             </Button>
           </form>
         </div>

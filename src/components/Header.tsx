@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Menu, X, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import APIKeyManager from './APIKeyManager';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,14 +9,26 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { useAuth } from '@/contexts/AuthContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+      navigate('/login');
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
+  };
+
   const mainRoutes = [
-    { path: '/', label: 'Home' },
+    { path: '/home', label: 'Home' },
     { path: '/executive-summary', label: 'Executive Summary' },
     { path: '/orb-platform', label: 'ORB Platform' },
     { path: '/nod-platform', label: 'NOD Platform' },
@@ -37,7 +48,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-charcoal/90 backdrop-blur-sm border-b border-white/10">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-3 hover:no-underline">
+          <Link to="/home" className="flex items-center gap-3 hover:no-underline">
             <img 
               src="/lovable-uploads/3cbb6750-3d48-45e8-b9ea-498f6527d80e.png" 
               alt="NeuralArc Logo" 
@@ -54,7 +65,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             <div className="flex items-center gap-6">
               {mainRoutes.map((route) => (
                 <Link
@@ -88,20 +99,32 @@ const Header = () => {
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
-            <div className="flex items-center gap-4">
-              <Link 
-                to="/login" 
-                className="text-offwhite hover:text-teal transition duration-200 text-sm"
+            {user && (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={handleSignOut}
+                className="text-offwhite hover:text-teal"
+                aria-label="Sign Out"
               >
-                Sign In
-              </Link>
-              <APIKeyManager />
-            </div>
+                <LogOut className="h-5 w-5" />
+              </Button>
+            )}
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center">
-            <APIKeyManager />
+            {user && (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={handleSignOut}
+                className="text-offwhite hover:text-teal mr-2"
+                aria-label="Sign Out"
+              >
+                <LogOut className="h-5 w-5" />
+              </Button>
+            )}
             <Button variant="ghost" size="icon" onClick={toggleMenu} aria-label="Toggle Menu">
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>

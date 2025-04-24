@@ -1,18 +1,13 @@
-
-/**
- * API service for interacting with the DeepSeek AI on the client side
- */
-
 type MessageHistory = {
   role: 'user' | 'assistant' | 'system';
   content: string;
 }[];
 
 export const handleChatRequest = async (message: string, history: MessageHistory): Promise<string> => {
-  const apiKey = localStorage.getItem('deepseek_api_key');
+  const apiKey = import.meta.env.VITE_DEEPSEEK_API_KEY;
   
   if (!apiKey) {
-    throw new Error('API key not found. Please add your DeepSeek API key in settings.');
+    throw new Error('API key not found. Please set the VITE_DEEPSEEK_API_KEY environment variable.');
   }
   
   try {

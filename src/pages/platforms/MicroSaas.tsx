@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -10,35 +9,35 @@ const MicroSaas = () => {
     {
       name: 'Rovyk',
       pitch: 'Unified chat + prompt lab for GPT-4o, Claude-3, Gemini, Mistral. Team libraries, share-links, token heat-map.',
-      status: 'LIVE'
+      status: 'BETA'
     },
     {
       name: 'LawBit.ai',
       pitch: 'Draft watertight NDAs, MSAs, SOWs. Clause-risk colour-coding & one-tap "legal-ese ➜ plain-English."',
-      status: 'LIVE'
-    },
-    {
-      name: 'Compliance AI',
-      pitch: 'HIPAA, GDPR, ISO-27001 gap-scan in minutes. Generates board-ready PDF.',
-      status: 'LIVE'
-    },
-    {
-      name: 'Kashew',
-      pitch: 'AI invoicing & rolling cash-flow forecasting for freelancers & Shopify sellers.',
       status: 'BETA'
+    },
+    {
+      name: 'Beacon',
+      pitch: 'Real-time market-signal radar: price jumps, sentiment swings, ad-spend spikes.',
+      status: 'UPCOMING'
     },
     {
       name: 'Spider',
       pitch: 'Point-&-click web scraper with Gen-AI transforms; CSV, JSON, or direct to Google Sheets.',
-      status: 'BETA'
+      status: 'UPCOMING'
+    },
+    {
+      name: 'Kashew',
+      pitch: 'AI invoicing & rolling cash-flow forecasting for freelancers & Shopify sellers.',
+      status: 'PLANNED'
     },
     {
       name: 'Striker',
       pitch: 'Real-time market-signal radar: price jumps, sentiment swings, ad-spend spikes.',
-      status: 'BETA'
+      status: 'PLANNED'
     },
     {
-      name: 'PatentPal',
+      name: 'Radar',
       pitch: 'Drafts claims, abstracts & figures; auto-checks USPTO classification.',
       status: 'PLANNED'
     },
@@ -76,23 +75,23 @@ const MicroSaas = () => {
     {
       name: 'Freemium',
       price: '0',
-      features: ['25 AI calls & community support']
+      features: ['50,000 tokens/month', 'Community support', 'Basic features']
     },
     {
       name: 'Pro',
       price: '19',
-      features: ['Unlimited calls', 'CSV export', 'Slack alerts']
+      features: ['250,000 tokens/month', 'Priority support', 'Full history access', 'Advanced features']
     },
     {
       name: 'Team',
       price: '49',
-      features: ['SSO', 'shared prompt libraries', 'usage analytics']
+      features: ['500,000 tokens/month', 'Priority support', 'Full history access', 'Advanced analytics']
     },
     {
       name: 'Suite Bundle',
       subtitle: '(any 5 apps)',
       price: '99',
-      features: ['Everything + priority roadmap voting']
+      features: ['1,200,000 tokens/month', 'Priority support', 'Early access to new features', 'Full history access', 'Advanced analytics']
     }
   ];
 
@@ -145,10 +144,33 @@ const MicroSaas = () => {
               <Card key={app.name} className="bg-charcoal/30 border-white/10">
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-semibold">{app.name}</h3>
+                    <h3 className="text-xl font-semibold">
+                      {app.name === 'Rovyk' ? (
+                        <a 
+                          href="https://rovyk.com" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="hover:text-teal transition-colors"
+                        >
+                          {app.name}
+                        </a>
+                      ) : app.name === 'LawBit.ai' ? (
+                        <a 
+                          href="https://lawbit.ai" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="hover:text-teal transition-colors"
+                        >
+                          {app.name}
+                        </a>
+                      ) : (
+                        app.name
+                      )}
+                    </h3>
                     <span className={`text-sm px-2 py-1 rounded ${
                       app.status === 'LIVE' ? 'bg-teal/20 text-teal' :
                       app.status === 'BETA' ? 'bg-yellow-500/20 text-yellow-500' :
+                      app.status === 'UPCOMING' ? 'bg-blue-500/20 text-blue-500' :
                       'bg-white/10 text-white/60'
                     }`}>
                       {app.status}
@@ -158,24 +180,6 @@ const MicroSaas = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </FadeInSection>
-
-        {/* Inside the Fabric */}
-        <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-20">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8">Inside the "Fabric"</h2>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <span className="bg-charcoal/30 px-4 py-2 rounded-full">Auth</span>
-              <span className="text-teal">↔</span>
-              <span className="bg-charcoal/30 px-4 py-2 rounded-full">Billing</span>
-              <span className="text-teal">↔</span>
-              <span className="bg-charcoal/30 px-4 py-2 rounded-full">Model-Orchestration</span>
-              <span className="text-teal">↔</span>
-              <span className="bg-charcoal/30 px-4 py-2 rounded-full">Usage Telemetry</span>
-              <span className="text-teal">↔</span>
-              <span className="bg-charcoal/30 px-4 py-2 rounded-full">Cross-Sell Engine</span>
-            </div>
           </div>
         </FadeInSection>
 
@@ -197,7 +201,7 @@ const MicroSaas = () => {
 
         {/* Pricing */}
         <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 mb-20">
-          <h2 className="text-3xl font-bold mb-8 text-center">Pricing — Coffee-Money Entry, Mocha Upsell</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Pricing</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {pricingTiers.map((tier) => (
               <Card key={tier.name} className="bg-charcoal/30 border-white/10">
@@ -226,11 +230,17 @@ const MicroSaas = () => {
         <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 text-center">
           <h2 className="text-3xl font-bold mb-8">Ready to experience "AI in 60 seconds"?</h2>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" className="bg-teal text-charcoal hover:bg-teal/90">
-              <Link to="/signup">Launch Your First Micro App →</Link>
+            <Button asChild size="lg" variant="outline" className="relative group overflow-hidden">
+              <Link to="/nod-platform">
+                <span className="relative z-10">Skip straight to NOD »</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00ff9d] to-[#00b8ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link to="/orb-platform">Skip straight to ORB »</Link>
+            <Button asChild size="lg" variant="outline" className="relative group overflow-hidden">
+              <Link to="/orb-platform">
+                <span className="relative z-10">Skip straight to ORB »</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00ff9d] to-[#00b8ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
             </Button>
           </div>
         </FadeInSection>

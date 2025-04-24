@@ -310,13 +310,6 @@ const NodPlatform = () => {
                 </Card>
               </FadeInSection>
             </div>
-            
-            <div className="mt-12 bg-charcoal/30 border-white/10 p-6 rounded-lg">
-              <blockquote className="mb-4 text-lg italic">
-                "The NOD platform has fundamentally changed how we make strategic decisions. What used to take us months of analysis now happens in weeks, and the quality of outcomes has improved substantially. It's as if we've acquired a superpower that lets us see connections and opportunities that were previously invisible."
-              </blockquote>
-              <p className="font-semibold">— Chief Operating Officer, Global Logistics Company</p>
-            </div>
           </div>
         </FadeInSection>
       </div>

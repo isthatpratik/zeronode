@@ -8,7 +8,7 @@ const WhitePaper = () => {
   return (
     <main className="pt-24 pb-16">
       <div className="grid-container">
-        <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12">
+        <section className="col-span-4 md:col-span-8 lg:col-span-12">
           <div className="max-w-5xl mx-auto space-y-12">
             {/* Title Section */}
             <StyledCard highlight className="text-center">
@@ -21,19 +21,14 @@ const WhitePaper = () => {
             <section>
               <SectionHeader number="01" title="Executive Summary" />
               <StyledCard>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-8">
                   <div className="prose prose-invert max-w-none">
+                  <div className="grid grid-cols-2 gap-8">
                     <p>
                       NeuralArc is pioneering a neural intelligence platform that delivers enterprise-grade AI capabilities across businesses of all sizes. Its three product pillars – ORB (Outlast. Reimagine. Build.), NOD (Navigate. Optimize. Disrupt.), and a Micro AI SaaS product suite – form a cohesive ecosystem addressing external competitive insight, internal decision acceleration, and specialized AI micro-services. From an investor perspective, NeuralArc sits at the intersection of multiple high-growth markets in AI. The global AI market is projected to surge from $757.58 billion in 2025 to $3.6 trillion by 2034 ￼, and venture funding is following suit (nearly 58% of global VC in Q1 2025 went to AI startups ￼). Within this landscape, NeuralArc's platforms target competitive intelligence (expected ~$96 billion market by 2030 ￼) and data analytics/decision platforms ( ~$483 billion by 2032 ￼). The Micro AI SaaS apps tap into the booming demand for specialized AI tools, as the "AI toolkit" segment grows ~24% CAGR through 2034 ￼.
                     </p>
-                    <p>
-                      Technically, NeuralArc's proprietary neural decision architecture mimics human cognition to synthesize data into actionable intelligence ￼. ORB and NOD leverage this architecture with quantum-inspired algorithms and a 14.3 billion-parameter core, enabling predictive analytics and real-time decision support at a scale previously unattainable for small and mid-sized businesses ￼ ￼. The Micro AI SaaS apps provide multiple entry points for customers to experience NeuralArc's capabilities, creating a natural upsell funnel into the larger platforms ￼.
-                    </p>
-                    <p>
-                      Financially, NeuralArc projects robust growth with high recurring revenue. A dual revenue model (enterprise SaaS subscriptions via ORB/NOD, plus high-volume micro-product sales) yields both predictable ARR and scalability. Five-year projections show revenue climbing from $18M in 2025 to $240M by 2029 ￼ with improving margins and a clear path to profitability. By 2029, ORB and NOD enterprise subscriptions account for the bulk of revenue (driven by hundreds of enterprise clients), while micro-product sales contribute a fast-growing minority share. This document provides a comprehensive deep dive into each product pillar's features and architecture, the addressable markets and competitive landscape, and the investment case supporting NeuralArc's valuation and growth trajectory.
-                    </p>
-                  </div>
-                  <div>
+                    <div className='flex flex-col justify-center items-center'>
+
                     <img 
                       src="/lovable-uploads/8d223397-fee5-4144-8368-af236b39e2b9.png" 
                       alt="Neural Decision Core Architecture"
@@ -42,7 +37,16 @@ const WhitePaper = () => {
                     <p className="text-sm text-muted-foreground mt-2 text-center">
                       Neural Decision Core Architecture Diagram
                     </p>
+                    </div>
                   </div>
+                    <p>
+                      Technically, NeuralArc's proprietary neural decision architecture mimics human cognition to synthesize data into actionable intelligence ￼. ORB and NOD leverage this architecture with quantum-inspired algorithms and a 14.3 billion-parameter core, enabling predictive analytics and real-time decision support at a scale previously unattainable for small and mid-sized businesses ￼ ￼. The Micro AI SaaS apps provide multiple entry points for customers to experience NeuralArc's capabilities, creating a natural upsell funnel into the larger platforms ￼.
+                    </p>
+                    <p>
+                      Financially, NeuralArc projects robust growth with high recurring revenue. A dual revenue model (enterprise SaaS subscriptions via ORB/NOD, plus high-volume micro-product sales) yields both predictable ARR and scalability. Five-year projections show revenue climbing from $18M in 2025 to $240M by 2029 ￼ with improving margins and a clear path to profitability. By 2029, ORB and NOD enterprise subscriptions account for the bulk of revenue (driven by hundreds of enterprise clients), while micro-product sales contribute a fast-growing minority share. This document provides a comprehensive deep dive into each product pillar's features and architecture, the addressable markets and competitive landscape, and the investment case supporting NeuralArc's valuation and growth trajectory.
+                    </p>
+                  </div>
+                  
                 </div>
               </StyledCard>
             </section>
@@ -181,7 +185,7 @@ const WhitePaper = () => {
               <SectionHeader number="06" title="Neural Architecture and Technology Foundation" />
               <StyledCard>
                 <div className="prose prose-invert max-w-none space-y-6">
-                  <div className="relative aspect-[1/1] max-w-2xl mx-auto mb-8">
+                  <div className="relative aspect-[1/1] max-w-xl mx-auto mb-8">
                     <img
                       src="/lovable-uploads/e3646a18-eed5-4f3b-af43-68f41fe12fab.png"
                       alt="Neural Decision Core Architecture Diagram"
@@ -320,7 +324,7 @@ const WhitePaper = () => {
               </StyledCard>
             </section>
           </div>
-        </FadeInSection>
+        </section>
       </div>
     </main>
   );
