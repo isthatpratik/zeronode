@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
@@ -23,54 +23,61 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-charcoal/90 backdrop-blur-sm border-b border-white/10">
-      <div className="container mx-auto px-4 md:px-6 lg:px-24 py-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-space font-bold text-teal hover:no-underline">
-          NeuralArc
-        </Link>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 py-4">
+        <div className="flex justify-between items-center">
+          <Link to="/" className="text-2xl font-space font-bold text-teal hover:no-underline">
+            NeuralArc
+          </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          <div className="hidden lg:flex space-x-6">
-            {routes.map((route) => (
-              <Link
-                key={route.path}
-                to={route.path}
-                className="text-offwhite hover:text-teal transition duration-200 text-sm"
-              >
-                {route.label}
-              </Link>
-            ))}
-          </div>
-          <Button asChild className="bg-teal text-charcoal hover:bg-teal/90">
-            <Link to="/contact">Get Demo</Link>
-          </Button>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
-          <Button variant="ghost" size="icon" onClick={toggleMenu} aria-label="Menu">
-            <Menu className="h-6 w-6" />
-          </Button>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-charcoal border-t border-white/10 px-4 py-4">
-          <nav className="flex flex-col space-y-3">
-            {routes.map((route) => (
-              <Link
-                key={route.path}
-                to={route.path}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-offwhite hover:text-teal py-2 transition duration-200"
-              >
-                {route.label}
-              </Link>
-            ))}
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-8">
+            <div className="flex items-center gap-6">
+              {routes.map((route) => (
+                <Link
+                  key={route.path}
+                  to={route.path}
+                  className="text-offwhite hover:text-teal transition duration-200 text-sm whitespace-nowrap"
+                >
+                  {route.label}
+                </Link>
+              ))}
+            </div>
+            <Button asChild className="bg-teal text-charcoal hover:bg-teal/90">
+              <Link to="/contact">Get Demo</Link>
+            </Button>
           </nav>
+
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
+            <Button variant="ghost" size="icon" onClick={toggleMenu} aria-label="Toggle Menu">
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
         </div>
-      )}
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="lg:hidden absolute left-0 right-0 top-[72px] bg-charcoal border-t border-white/10">
+            <nav className="container mx-auto px-4 py-4">
+              <div className="flex flex-col space-y-3">
+                {routes.map((route) => (
+                  <Link
+                    key={route.path}
+                    to={route.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-offwhite hover:text-teal py-2 transition duration-200"
+                  >
+                    {route.label}
+                  </Link>
+                ))}
+                <Button asChild className="bg-teal text-charcoal hover:bg-teal/90 w-full mt-4">
+                  <Link to="/contact">Get Demo</Link>
+                </Button>
+              </div>
+            </nav>
+          </div>
+        )}
+      </div>
     </header>
   );
 };
