@@ -5,7 +5,7 @@ import FadeInSection from '@/components/FadeInSection';
 import CountUp from '@/components/CountUp';
 import { useMarketMetricsVerifier } from '@/components/MarketMetricsVerifier';
 import HomeChat from '@/components/HomeChat';
-import { Spotlight } from '@/components/ui/spotlight-new';
+import Aurora  from '@/components/Aurora/Aurora';
 
 const Index = () => {
   const metrics = useMarketMetricsVerifier();
@@ -15,11 +15,16 @@ const Index = () => {
       {/* Hero Section */}
       <section className="h-full relative overflow-hidden bg-charcoal/[0.96] antialiased bg-grid-white/[0.02]">
         <div className="absolute inset-0">
-          <Spotlight />
+          <Aurora 
+            colorStops={['#00d8ff', '#7cff67', '#00d8ff']}
+            amplitude={1.0}
+            blend={0.5}
+            speed={0.5}
+          />
         </div>
         <div className="grid-container relative z-10 h-full flex items-center py-24">
-          <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 text-center">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+          <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 text-center ">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance z-50 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
               Neural Intelligence for{' '}
               <span className="underline decoration-teal">Business Intelligence</span>
             </h1>

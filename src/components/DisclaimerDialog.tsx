@@ -19,13 +19,13 @@ const DisclaimerDialog = () => {
         </DialogHeader>
         <div className="space-y-4 text-sm">
           <p>
-            This presentation (the "Presentation") contains confidential, proprietary, and commercially sensitive information belonging to NeuralArc, including but not limited to strategic plans, financial data, operational insights, and information relating to the Company's AI systems, models, and data infrastructure. It is provided solely for informational purposes to a limited number of recipients for the purpose of evaluating a potential business relationship or investment.
+            This website (the "Website") contains confidential, proprietary, and commercially sensitive information belonging to NeuralArc, including but not limited to strategic plans, financial data, operational insights, and information relating to the Company's AI systems, models, and data infrastructure. It is provided solely for informational purposes to a limited number of recipients for the purpose of evaluating a potential business relationship or investment.
           </p>
           <p>
-            By accepting this Presentation, you agree that the information contained herein shall be treated as strictly confidential and shall not be disclosed, copied, reproduced, shared, or distributed in any form electronically or otherwise without the prior written consent of the Company.
+            By accepting this Website, you agree that the information contained herein shall be treated as strictly confidential and shall not be disclosed, copied, reproduced, shared, or distributed in any form electronically or otherwise without the prior written consent of the Company.
           </p>
           <p>
-            This Presentation does not constitute an offer to sell or a solicitation of an offer to buy any securities or engage in any transaction. No representation or warranty, express or implied, is made as to the accuracy, completeness, or reliability of the information contained herein, including any forward-looking statements or assumptions.
+            This Website does not constitute an offer to sell or a solicitation of an offer to buy any securities or engage in any transaction. No representation or warranty, express or implied, is made as to the accuracy, completeness, or reliability of the information contained herein, including any forward-looking statements or assumptions.
           </p>
           <p>
             All AI-related content, data outputs, and intellectual property disclosed herein remain the exclusive property of the Company. Any unauthorized use or dissemination of this information, particularly that relating to AI technologies and proprietary systems, is strictly prohibited and may result in legal liability.
