@@ -145,8 +145,8 @@ const WhitePaper = () => {
                 number="03"
                 title="ORB: Outlast. Reimagine. Build. – Predictive Competitive Intelligence"
               />
-              <StyledCard>
-                <div className="prose prose-invert max-w-none">
+              <StyledCard className="p-8">
+                <div className="prose prose-invert max-w-none space-y-4">
                   <p>
                     ORB is NeuralArc's competitive intelligence platform,
                     designed to help companies outlast rivals, reimagine
@@ -242,8 +242,8 @@ const WhitePaper = () => {
                 number="04"
                 title="NOD: Navigate. Optimize. Disrupt. – Decision Velocity at Quantum Scale"
               />
-              <StyledCard>
-                <div className="prose prose-invert max-w-none">
+              <StyledCard className="p-8">
+                <div className="prose prose-invert max-w-none space-y-4">
                   <p>
                     While ORB looks outward, NOD turns NeuralArc's AI inward to
                     an organization's own operations. NOD is a decision support
@@ -369,8 +369,8 @@ const WhitePaper = () => {
                 number="05"
                 title="Micro AI SaaS Suite – Specialized AI Apps as Entry Points"
               />
-              <StyledCard>
-                <div className="prose prose-invert max-w-none">
+              <StyledCard className="p-8">
+                <div className="prose prose-invert max-w-none space-y-4">
                   <p>
                     Complementing the flagship platforms, NeuralArc offers a
                     suite of Micro AI SaaS products – lightweight, focused
@@ -492,7 +492,7 @@ const WhitePaper = () => {
                 number="06"
                 title="Neural Architecture and Technology Foundation"
               />
-              <StyledCard>
+              <StyledCard className="p-8">
                 <div className="prose prose-invert max-w-none space-y-6">
                   <div className="relative aspect-[1/1] max-w-xl mx-auto mb-8">
                     <img
@@ -699,8 +699,8 @@ const WhitePaper = () => {
                 number="07"
                 title="Competitive Landscape and Benchmarking"
               />
-              <StyledCard>
-                <div className="prose prose-invert max-w-none">
+              <StyledCard className="p-8">
+                <div className="prose prose-invert max-w-none space-y-4">
                   <p>
                     The AI solutions space is broad, ranging from tech giants
                     offering general AI platforms to startups focused on narrow

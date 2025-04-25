@@ -64,7 +64,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-white/10 text-sm text-muted-foreground">
-          <p className="mb-8 text-center text-xs text-balance">
+          <p className="mb-8 text-center text-sm text-balance">
             The statistical data presented on this website have been obtained
             from publicly available sources on the internet. While we strive for
             accuracy, we do not guarantee the completeness, reliability, or
