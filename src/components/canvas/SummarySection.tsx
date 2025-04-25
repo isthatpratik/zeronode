@@ -19,9 +19,9 @@ const SummarySection = () => {
           </p>
           
           <p className="text-muted-foreground">
-            By highlighting submarkets like competitive intelligence and decision support – and showing how 
-            NeuralArc transcends their traditional limitations – this industry canvas demonstrates the 
-            substantial market opportunity for NeuralArc. The white-space it fills is both real and large: 
+            By highlighting submarkets like competitive intelligence and decision support, and showing how 
+            NeuralArc transcends their traditional limitations, this industry canvas demonstrates the 
+            substantial market opportunity for NeuralArc. The white space it fills is both real and large: 
             as SMBs worldwide continue to adopt AI, they will need solutions that are powerful yet practical. 
             NeuralArc is poised to be that solution, leveraging its head start and integrated vision.
           </p>
@@ -30,7 +30,7 @@ const SummarySection = () => {
             For investors, this means NeuralArc isn't just another AI SaaS company; it's a potential 
             category leader that can capture pent-up demand in a largely untapped segment. With the AI 
             sector's growth continuing at over 30% CAGR and billions flowing into it, NeuralArc's focus 
-            on SMBs with viral micro-apps and neural enterprise engines gives it both defensible 
+            on SMBs with viral micro apps and neural enterprise engines gives it both defensible 
             differentiation and scalability.
           </p>
           
@@ -38,7 +38,7 @@ const SummarySection = () => {
             It transforms the fragmented competitive landscape into a cohesive offering under one roof, 
             which is a narrative that resonates strongly when assessing long-term winners in tech. In the 
             arc of the AI industry's evolution, NeuralArc is bending it toward inclusive, neural-driven 
-            intelligence – and that is a compelling story in the market today.
+            intelligence, and that is a compelling story in the market today.
           </p>
           
           <div className="mt-8 pt-6 border-t border-white/10">

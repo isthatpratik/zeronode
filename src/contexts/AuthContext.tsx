@@ -1,48 +1,78 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { User } from '@supabase/supabase-js';
-import { supabase } from '@/lib/supabase';
+import { useNavigate } from 'react-router-dom';
 
-type AuthContextType = {
-  user: User | null;
+interface AuthContextType {
+  isAuthenticated: boolean;
+  disclaimerAccepted: boolean;
   loading: boolean;
+  user: any | null;
+  acceptDisclaimer: () => void;
   signIn: (email: string, password: string) => Promise<void>;
-  signOut: () => Promise<void>;
-};
+  signOut: () => void;
+}
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null);
+export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [disclaimerAccepted, setDisclaimerAccepted] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState<any | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Check active sessions and sets the user
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
-      setLoading(false);
-    });
-
-    // Listen for changes on auth state (signed in, signed out, etc.)
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-      setLoading(false);
-    });
-
-    return () => subscription.unsubscribe();
+    // Check if user is authenticated and has accepted disclaimer
+    const auth = localStorage.getItem('isAuthenticated');
+    const disclaimer = localStorage.getItem('disclaimerAccepted');
+    if (auth === 'true') {
+      setIsAuthenticated(true);
+      setUser({ id: auth }); // Set a basic user object
+      if (disclaimer === 'true') {
+        setDisclaimerAccepted(true);
+      }
+    }
+    setLoading(false);
   }, []);
 
-  const signIn = async (email: string, password: string) => {
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
-    if (error) throw error;
+  const acceptDisclaimer = () => {
+    setDisclaimerAccepted(true);
+    localStorage.setItem('disclaimerAccepted', 'true');
   };
 
-  const signOut = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) throw error;
+  const signIn = async (email: string, password: string) => {
+    try {
+      setLoading(true);
+      // Your authentication logic here
+      setIsAuthenticated(true);
+      setUser({ email }); // Set user with email
+      localStorage.setItem('isAuthenticated', 'true');
+      navigate('/home'); // Navigate to home after successful sign in
+    } catch (error) {
+      console.error('Sign in error:', error);
+      throw error;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const signOut = () => {
+    setIsAuthenticated(false);
+    setDisclaimerAccepted(false);
+    localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('disclaimerAccepted');
+    navigate('/login');
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, signIn, signOut }}>
+    <AuthContext.Provider value={{ 
+      isAuthenticated, 
+      disclaimerAccepted,
+      loading,
+      user,
+      acceptDisclaimer,
+      signIn, 
+      signOut 
+    }}>
       {children}
     </AuthContext.Provider>
   );

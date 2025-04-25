@@ -53,7 +53,7 @@ const InvestmentOpportunity = () => {
         </FadeInSection>
 
         {/* Main Content in Two Columns */}
-        <div className="col-span-4 md:col-span-8 lg:col-span-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="col-span-4 md:col-span-8 lg:col-span-12 grid grid-cols-1 lg:grid-cols-1 gap-8">
           {/* Left Column */}
           <FadeInSection>
             <div className="space-y-8">

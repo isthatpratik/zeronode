@@ -69,14 +69,14 @@ const Header = () => {
             <div className="flex items-center gap-6">
               <Link
                 to="/home"
-                className="text-offwhite hover:text-teal transition duration-200 text-sm whitespace-nowrap"
+                className="text-offwhite hover:text-teal transition duration-200 text-sm whitespace-nowrap cursor-pointer"
               >
                 Home
               </Link>
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-offwhite hover:text-teal transition duration-200 text-sm">
+                    <NavigationMenuTrigger className="text-offwhite hover:text-teal transition duration-200 text-sm cursor-pointer">
                       Investment Opportunity
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -85,7 +85,7 @@ const Header = () => {
                           <Link
                             key={route.path}
                             to={route.path}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer"
                           >
                             <div className="text-sm font-medium leading-none">{route.label}</div>
                           </Link>
@@ -99,7 +99,7 @@ const Header = () => {
                 <Link
                   key={route.path}
                   to={route.path}
-                  className="text-offwhite hover:text-teal transition duration-200 text-sm whitespace-nowrap"
+                  className="text-offwhite hover:text-teal transition duration-200 text-sm whitespace-nowrap cursor-pointer"
                 >
                   {route.label}
                 </Link>
@@ -147,7 +147,7 @@ const Header = () => {
                     key={route.path}
                     to={route.path}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-offwhite hover:text-teal py-2 transition duration-200"
+                    className="text-offwhite hover:text-teal py-2 transition duration-200 cursor-pointer"
                   >
                     {route.label}
                   </Link>
@@ -159,7 +159,7 @@ const Header = () => {
                       key={route.path}
                       to={route.path}
                       onClick={() => setIsMenuOpen(false)}
-                      className="text-offwhite hover:text-teal py-2 block transition duration-200 pl-4"
+                      className="text-offwhite hover:text-teal py-2 block transition duration-200 pl-4 cursor-pointer"
                     >
                       {route.label}
                     </Link>

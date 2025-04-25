@@ -11,7 +11,7 @@ export function StyledCard({ children, highlight, className, ...props }: StyledC
   return (
     <Card 
       className={cn(
-        "bg-charcoal/30 border-white/10 transition-all duration-300 hover:bg-charcoal/40",
+        "bg-charcoal/30 border-white/10 transition-all duration-300 hover:bg-charcoal/40 h-full",
         highlight && "border-l-4 border-l-teal",
         className
       )} 

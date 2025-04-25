@@ -8,22 +8,22 @@ const MicroSaas = () => {
   const apps = [
     {
       name: 'Rovyk',
-      pitch: 'Unified chat + prompt lab for GPT-4o, Claude-3, Gemini, Mistral. Team libraries, share-links, token heat-map.',
+      pitch: 'Unified chat + prompt lab for GPT-4o, Claude-3, Gemini, Grok, Deepseek. Retro terminal UI, token heat-map, affordable pricing.',
       status: 'BETA'
     },
     {
       name: 'LawBit.ai',
-      pitch: 'Draft watertight NDAs, MSAs, SOWs. Clause-risk colour-coding & one-tap "legal-ese ➜ plain-English."',
+      pitch: 'AI legal assistant that drafts NDAs, MSAs, SOWs with risk analysis and plain-English explanations.',
       status: 'BETA'
     },
     {
       name: 'Beacon',
-      pitch: 'Real-time market-signal radar: price jumps, sentiment swings, ad-spend spikes.',
+      pitch: 'AI compliance assistant that automatically checks regulations and suggests fixes for GDPR, CCPA, and industry rules.',
       status: 'UPCOMING'
     },
     {
       name: 'Spider',
-      pitch: 'Point-&-click web scraper with Gen-AI transforms; CSV, JSON, or direct to Google Sheets.',
+      pitch: 'AI pitch deck analyzer that evaluates content and design, providing actionable insights for better investor engagement.',
       status: 'UPCOMING'
     },
     {
@@ -38,7 +38,7 @@ const MicroSaas = () => {
     },
     {
       name: 'Radar',
-      pitch: 'Drafts claims, abstracts & figures; auto-checks USPTO classification.',
+      pitch: 'AI patent assistant that drafts claims, checks prior art, and suggests optimal filing strategies.',
       status: 'PLANNED'
     },
     {

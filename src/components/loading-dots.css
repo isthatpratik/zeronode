@@ -1,0 +1,26 @@
+@keyframes loading-dots-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+.loading-dot {
+  width: 6px;
+  height: 6px;
+  background-color: currentColor; /* Use the parent text color */
+  border-radius: 50%;
+  animation: loading-dots-pulse 1.4s infinite ease-in-out both;
+}
+
+.loading-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: -0.16s;
+} 

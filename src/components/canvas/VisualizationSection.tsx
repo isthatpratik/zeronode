@@ -15,7 +15,7 @@ const VisualizationSection = () => {
           className="mb-8" 
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="relative aspect-square lg:aspect-auto bg-charcoal/30 rounded-lg overflow-hidden">
+          <div className="relative aspect-square p-12 pt-0 lg:aspect-auto bg-charcoal/30 rounded-lg overflow-hidden">
             <img 
               src="/lovable-uploads/af0dd9e0-fac8-4703-ac3a-d0292015b485.png"
               alt="AI Landscape Positioning Chart"

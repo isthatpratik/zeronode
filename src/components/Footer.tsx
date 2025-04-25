@@ -38,11 +38,11 @@ const Footer = () => {
         </div>
         <div className="mt-8 pt-8 border-t border-white/10 text-sm text-muted-foreground flex justify-between">
           <div className="flex flex-wrap gap-2 justify-center">
-            <Link to="/terms-of-use" className="hover:text-teal transition-colors">Terms of Use</Link>
+            <Link to="/TermsOfUse" className="hover:text-teal transition-colors">Terms of Use</Link>
             <span className="text-muted-foreground">•</span>
             <Link to="/Disclaimer" className="hover:text-teal transition-colors">Disclaimer</Link>
             <span className="text-muted-foreground">•</span>
-            <Link to="/responsible-ai" className="hover:text-teal transition-colors">Responsible AI</Link>
+            <Link to="/ResponsibleAI" className="hover:text-teal transition-colors">Responsible AI</Link>
           </div>
           <p className="text-center">© 2025 NeuralArc. All rights reserved.</p>
         </div>

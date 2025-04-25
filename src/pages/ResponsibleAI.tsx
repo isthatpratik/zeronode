@@ -10,7 +10,6 @@ const ResponsibleAI = () => {
             <div className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">Responsible Use of AI-Powered Tools</h2>
               <div className="text-muted-foreground mb-6">
-                <p><strong>Applies to:</strong> All Employees, Contractors, and Consultants</p>
                 <p><strong>Effective From:</strong> April 2025</p>
               </div>
 

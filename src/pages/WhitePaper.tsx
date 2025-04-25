@@ -8,23 +8,22 @@ const WhitePaper = () => {
     <main className="pt-24 pb-16">
       <div className="grid-container">
         <section className="col-span-4 md:col-span-8 lg:col-span-12">
-          <div className="max-w-5xl mx-auto space-y-12">
+          <div className="max-w-5xl mx-auto space-y-16">
             {/* Title Section */}
-            <StyledCard highlight className="text-center">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                NeuralArc – A Deep Dive into ORB, NOD, and the Micro AI SaaS
-                Suite
+            <StyledCard highlight className="text-center p-8">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                NeuralArc – A Deep Dive into ORB, NOD, and the Micro AI SaaS Suite
               </h1>
             </StyledCard>
 
             {/* Executive Summary */}
-            <section>
+            <section className="space-y-8">
               <SectionHeader number="01" title="Executive Summary" />
-              <StyledCard>
+              <StyledCard className="p-8">
                 <div className="flex flex-col gap-8">
-                  <div className="prose prose-invert max-w-none">
+                  <div className="prose prose-invert max-w-none space-y-6">
                     <div className="grid grid-cols-1 gap-8">
-                      <p>
+                      <p className="leading-relaxed">
                         NeuralArc is pioneering a neural intelligence platform
                         that delivers enterprise-grade AI capabilities across
                         businesses of all sizes. Its three product pillars – ORB
@@ -47,7 +46,7 @@ const WhitePaper = () => {
                         through 2034.
                       </p>
                     </div>
-                    <p>
+                    <p className="leading-relaxed">
                       Technically, NeuralArc's proprietary neural decision
                       architecture mimics human cognition to synthesize data
                       into actionable intelligence. ORB and NOD leverage this
@@ -59,7 +58,7 @@ const WhitePaper = () => {
                       customers to experience NeuralArc's capabilities, creating
                       a natural upsell funnel into the larger platforms.
                     </p>
-                    <p>
+                    <p className="leading-relaxed">
                       Financially, NeuralArc projects robust growth with high
                       recurring revenue. A dual revenue model (enterprise SaaS
                       subscriptions via ORB/NOD, plus high-volume micro-product
@@ -81,14 +80,14 @@ const WhitePaper = () => {
             </section>
 
             {/* Market Landscape Section */}
-            <section>
+            <section className="space-y-8">
               <SectionHeader
                 number="02"
                 title="Market Landscape and Opportunity"
               />
-              <StyledCard>
-                <div className="prose prose-invert max-w-none">
-                  <p>
+              <StyledCard className="p-8">
+                <div className="prose prose-invert max-w-none space-y-6">
+                  <p className="leading-relaxed">
                     The adoption of AI in business is reaching an inflection
                     point. The global AI market is on track to grow at 19.2%
                     CAGR, from $757.6B in 2025 to $3.68T by 2034, signaling
@@ -102,7 +101,7 @@ const WhitePaper = () => {
                     companies that can democratize advanced AI for mid-market
                     users stand to unlock pent-up demand.
                   </p>
-                  <p>
+                  <p className="leading-relaxed">
                     NeuralArc's positioning squarely targets this need. It
                     straddles two rapidly expanding segments: Competitive
                     Intelligence Tools (a market valued under $0.5B in the
@@ -118,7 +117,7 @@ const WhitePaper = () => {
                     that must outthink competitors and leverage data for
                     decisions.
                   </p>
-                  <p>
+                  <p className="leading-relaxed">
                     NeuralArc's third pillar, the Micro AI SaaS suite, expands
                     its reach further. These bite-sized AI applications address
                     specific, everyday business challenges (legal document
