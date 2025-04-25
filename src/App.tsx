@@ -20,7 +20,6 @@ import { AuthProvider, useAuth } from '@/contexts/AuthContext';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import TermsOfUse from '@/pages/TermsOfUse';
 import Disclaimer from '@/pages/Disclaimer';
-import GeneralDisclaimer from '@/pages/GeneralDisclaimer';
 import ResponsibleAI from '@/pages/ResponsibleAI';
 
 const AppContent = () => {
@@ -115,11 +114,6 @@ const AppContent = () => {
             <Disclaimer />
           </ProtectedRoute>
         } />
-        <Route path="/GeneralDisclaimer" element={
-          <ProtectedRoute>
-            <GeneralDisclaimer />
-          </ProtectedRoute>
-        } />  
         <Route path="/ResponsibleAI" element={
           <ProtectedRoute>
             <ResponsibleAI />

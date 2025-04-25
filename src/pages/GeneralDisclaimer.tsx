@@ -1,6 +1,6 @@
 import FadeInSection from '@/components/FadeInSection';
 
-const GeneralDisclaimer = () => {
+const Disclaimer = () => {
   return (
     <main className="pt-24 pb-16">
       <div className="grid-container h-[calc(100vh-30rem)]">
@@ -23,4 +23,4 @@ const GeneralDisclaimer = () => {
   );
 };
 
-export default GeneralDisclaimer; 
+export default Disclaimer; 
