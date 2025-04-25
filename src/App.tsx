@@ -18,6 +18,10 @@ import Login from '@/pages/Login';
 import ScrollToTop from '@/components/ScrollToTop';
 import { AuthProvider, useAuth } from '@/contexts/AuthContext';
 import ProtectedRoute from '@/components/ProtectedRoute';
+import TermsOfUse from '@/pages/TermsOfUse';
+import Disclaimer from '@/pages/Disclaimer';
+import GeneralDisclaimer from '@/pages/GeneralDisclaimer';
+import ResponsibleAI from '@/pages/ResponsibleAI';
 
 const AppContent = () => {
   const location = useLocation();
@@ -99,6 +103,26 @@ const AppContent = () => {
         <Route path="/white-paper" element={
           <ProtectedRoute>
             <WhitePaper />
+          </ProtectedRoute>
+        } />
+        <Route path="/TermsOfUse" element={
+          <ProtectedRoute>
+            <TermsOfUse />
+          </ProtectedRoute>
+        } />
+        <Route path="/Disclaimer" element={
+          <ProtectedRoute>
+            <Disclaimer />
+          </ProtectedRoute>
+        } />
+        <Route path="/GeneralDisclaimer" element={
+          <ProtectedRoute>
+            <GeneralDisclaimer />
+          </ProtectedRoute>
+        } />  
+        <Route path="/ResponsibleAI" element={
+          <ProtectedRoute>
+            <ResponsibleAI />
           </ProtectedRoute>
         } />
       </Routes>

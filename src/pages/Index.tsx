@@ -5,17 +5,21 @@ import FadeInSection from '@/components/FadeInSection';
 import CountUp from '@/components/CountUp';
 import { useMarketMetricsVerifier } from '@/components/MarketMetricsVerifier';
 import HomeChat from '@/components/HomeChat';
+import { Spotlight } from '@/components/ui/spotlight-new';
 
 const Index = () => {
   const metrics = useMarketMetricsVerifier();
 
   return (
-    <main className="pt-24 pb-16">
+    <main className="pt-16 pb-16">
       {/* Hero Section */}
-      <section className="py-8 md:py-12">
-        <div className="grid-container">
-          <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 text-center mb-12">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">
+      <section className="h-full relative overflow-hidden bg-charcoal/[0.96] antialiased bg-grid-white/[0.02]">
+        <div className="absolute inset-0">
+          <Spotlight />
+        </div>
+        <div className="grid-container relative z-10 h-full flex items-center py-24">
+          <FadeInSection className="col-span-4 md:col-span-8 lg:col-span-12 text-center">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
               Neural Intelligence for{' '}
               <span className="underline decoration-teal">Business Intelligence</span>
             </h1>
@@ -30,7 +34,10 @@ const Index = () => {
                 <Link to="/white-paper">View White Paper</Link>
               </Button>
               <Button asChild variant="outline" className="relative group overflow-hidden">
-                <a href="#products">
+                <a href="#products" onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+                }}>
                   <span className="relative z-10">Explore the Stack ↓</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#00ff9d] to-[#00b8ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </a>

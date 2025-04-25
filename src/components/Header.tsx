@@ -67,15 +67,12 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
             <div className="flex items-center gap-6">
-              {mainRoutes.map((route) => (
-                <Link
-                  key={route.path}
-                  to={route.path}
-                  className="text-offwhite hover:text-teal transition duration-200 text-sm whitespace-nowrap"
-                >
-                  {route.label}
-                </Link>
-              ))}
+              <Link
+                to="/home"
+                className="text-offwhite hover:text-teal transition duration-200 text-sm whitespace-nowrap"
+              >
+                Home
+              </Link>
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
@@ -98,6 +95,15 @@ const Header = () => {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
+              {mainRoutes.filter(route => route.path !== '/home').map((route) => (
+                <Link
+                  key={route.path}
+                  to={route.path}
+                  className="text-offwhite hover:text-teal transition duration-200 text-sm whitespace-nowrap"
+                >
+                  {route.label}
+                </Link>
+              ))}
             </div>
             {user && (
               <Button
